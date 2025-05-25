@@ -1,7 +1,7 @@
 // Elements to load dynamically
 const sectionsToLoad = {
-  "nav-container": "nav.html",
-  "footer-container": "footer.html"
+  "nav-container": "/nav.html",
+  "footer-container": "/footer.html"
 };
 
 // Track load completion
