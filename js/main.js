@@ -1,11 +1,11 @@
 // Load external HTML into container elements
 const sections = {
-    "nav-container": "nav.html",
-    "home": "home.html",
-    "about": "about.html",
-    "projects": "projects.html",
-    "contact": "contact.html",
-    "footer-container": "footer.html"
+  "nav-container": "nav.html",
+  "footer-container": "footer.html",
+  "home": "home.html",
+  "about": "about.html",
+  "projects": "projects.html",
+  "contact": "contact.html"
 };
 
 for (const [id, file] of Object.entries(sections)) {

@@ -1,90 +1,22 @@
-<h1 class="text-4xl font-bold mb-8">My Projects</h1>
-<p class="text-xl text-gray-600 mb-12">A collection of my coding projects, ranging from academic work to personal explorations in technology.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Tyler Mastrangelo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="min-h-screen bg-gray-50">
+  <div id="nav-container"></div>
 
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-    <!-- Project Cards (6 total) -->
-    <div class="project-card bg-white rounded-lg overflow-hidden">
-        <div class="h-48 bg-gray-200 flex items-center justify-center">
-            <i class="fas fa-lock text-5xl text-gray-600"></i>
-        </div>
-        <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">Secure Password Manager</h3>
-            <p class="text-gray-600 mb-4">A locally encrypted password storage solution with biometric authentication.</p>
-            <div class="flex justify-between items-center">
-                <span class="text-sm bg-black text-white px-3 py-1 rounded-full">Python</span>
-                <a href="#" class="text-black hover:underline">View Project</a>
-            </div>
-        </div>
-    </div>
-    <div class="project-card bg-white rounded-lg overflow-hidden">
-        <div class="h-48 bg-gray-200 flex items-center justify-center">
-            <i class="fas fa-chart-line text-5xl text-gray-600"></i>
-        </div>
-        <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">Running Analytics Dashboard</h3>
-            <p class="text-gray-600 mb-4">Visualization tool for tracking and analyzing running performance metrics.</p>
-            <div class="flex justify-between items-center">
-                <span class="text-sm bg-black text-white px-3 py-1 rounded-full">JavaScript</span>
-                <a href="https://github.com/tylermastrangelo/running-analytics" target="_blank" class="text-black hover:underline">GitHub</a>
-            </div>
-        </div>
-    </div>
-    <div class="project-card bg-white rounded-lg overflow-hidden">
-        <div class="h-48 bg-gray-200 flex items-center justify-center">
-            <i class="fas fa-robot text-5xl text-gray-600"></i>
-        </div>
-        <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">AI Study Assistant</h3>
-            <p class="text-gray-600 mb-4">Natural language processing tool for generating study guides from lecture notes.</p>
-            <div class="flex justify-between items-center">
-                <span class="text-sm bg-black text-white px-3 py-1 rounded-full">Python</span>
-                <a href="#" class="text-black hover:underline">View Project</a>
-            </div>
-        </div>
-    </div>
-    <div class="project-card bg-white rounded-lg overflow-hidden">
-        <div class="h-48 bg-gray-200 flex items-center justify-center">
-            <i class="fas fa-shield-alt text-5xl text-gray-600"></i>
-        </div>
-        <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">Network Security Monitor</h3>
-            <p class="text-gray-600 mb-4">Tool for detecting suspicious network activity and potential intrusions.</p>
-            <div class="flex justify-between items-center">
-                <span class="text-sm bg-black text-white px-3 py-1 rounded-full">C++</span>
-                <a href="https://github.com/tylermastrangelo/network-monitor" target="_blank" class="text-black hover:underline">GitHub</a>
-            </div>
-        </div>
-    </div>
-    <div class="project-card bg-white rounded-lg overflow-hidden">
-        <div class="h-48 bg-gray-200 flex items-center justify-center">
-            <i class="fas fa-mobile-alt text-5xl text-gray-600"></i>
-        </div>
-        <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">Campus Navigation App</h3>
-            <p class="text-gray-600 mb-4">Mobile application for navigating Elon University's campus with accessibility features.</p>
-            <div class="flex justify-between items-center">
-                <span class="text-sm bg-black text-white px-3 py-1 rounded-full">React Native</span>
-                <a href="#" class="text-black hover:underline">View Project</a>
-            </div>
-        </div>
-    </div>
-    <div class="project-card bg-white rounded-lg overflow-hidden">
-        <div class="h-48 bg-gray-200 flex items-center justify-center">
-            <i class="fas fa-brain text-5xl text-gray-600"></i>
-        </div>
-        <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">Psychology Experiment Simulator</h3>
-            <p class="text-gray-600 mb-4">Interactive simulations of classic psychology experiments for education.</p>
-            <div class="flex justify-between items-center">
-                <span class="text-sm bg-black text-white px-3 py-1 rounded-full">JavaScript</span>
-                <a href="https://github.com/tylermastrangelo/psych-simulator" target="_blank" class="text-black hover:underline">GitHub</a>
-            </div>
-        </div>
-    </div>
-</div>
+  <main class="pt-24 pb-12 container mx-auto px-6">
+    <div id="projects"></div>
+  </main>
 
-<div class="text-center">
-    <a href="https://github.com/tylermastrangelo" target="_blank" class="inline-flex items-center px-6 py-3 border border-black rounded hover:bg-gray-100 transition">
-        <i class="fab fa-github mr-2"></i> View All Projects on GitHub
-    </a>
-</div>
+  <div id="footer-container"></div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

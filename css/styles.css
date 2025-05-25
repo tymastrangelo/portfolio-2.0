@@ -1,0 +1,9 @@
+.typewriter {
+  border-right: 2px solid black;
+  animation: blink 0.95s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { border-color: transparent; }
+  50% { border-color: black; }
+}
