@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amazon Favorites | Tyler Mastrangelo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+
+  <div id="nav-container"></div>
+
+  <main class="pt-20 pb-16 px-4 sm:px-6 md:px-8 max-w-6xl mx-auto">
+    <h1 class="text-3xl sm:text-4xl font-bold mb-4 text-center">Amazon Dorm Favorites</h1>
+    <p class="text-base sm:text-lg text-gray-600 mb-6 text-center max-w-2xl mx-auto">
+      Stuff I actually use in my dorm — everything from lights to projectors to vibes.  
+      <span class="block text-sm mt-2 text-gray-500">Affiliate links — I might earn a small commission (no extra cost to you).</span>
+    </p>
+
+    <!-- Search bar -->
+    <div class="mb-10 max-w-md mx-auto">
+      <input type="text" id="searchInput" placeholder="Search products..."
+        class="w-full rounded-lg border border-gray-300 px-4 py-2 shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+    </div>
+
+    <!-- Product Grid -->
+    <div id="productGrid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      
+      <!-- Planetarium Projector -->
+      <a href="https://amzn.to/4mqC8DV" target="_blank" rel="noopener noreferrer"
+         class="product-card bg-white rounded-xl shadow hover:shadow-md transition duration-200 overflow-hidden flex flex-col"
+         data-title="Planetarium Projector" data-date="2025-08-20">
+        <img src="images/amazon/galaxy-projector.jpg" alt="Planetarium Projector"
+             class="w-full h-56 sm:h-48 object-cover" />
+        <div class="p-4 flex flex-col flex-1">
+          <h2 class="text-lg font-semibold mb-1">Planetarium Projector</h2>
+          <p class="text-sm text-gray-600 flex-1">13-in-1 Galaxy Light with HD stars, nebula modes, and auto-off timer. Sets a relaxing nighttime vibe.</p>
+        </div>
+      </a>
+
+      <!-- Mini Android Projector -->
+      <a href="https://amzn.to/45OcVvZ" target="_blank" rel="noopener noreferrer"
+         class="product-card bg-white rounded-xl shadow hover:shadow-md transition duration-200 overflow-hidden flex flex-col"
+         data-title="Mini Android Projector" data-date="2025-08-18">
+        <img src="images/amazon/mini-projector.jpg" alt="Mini Android Projector"
+             class="w-full h-56 sm:h-48 object-cover" />
+        <div class="p-4 flex flex-col flex-1">
+          <h2 class="text-lg font-semibold mb-1">Mini Android Projector</h2>
+          <p class="text-sm text-gray-600 flex-1">Streams Netflix, rotates 180°, supports 4K. Perfect for dorm movie nights or projecting onto the ceiling.</p>
+        </div>
+      </a>
+
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="js/main.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('searchInput');
+      const grid = document.getElementById('productGrid');
+      const cards = Array.from(grid.querySelectorAll('.product-card'));
+
+      // Sort by date descending
+      cards.sort((a, b) => {
+        const dateA = new Date(a.dataset.date);
+        const dateB = new Date(b.dataset.date);
+        return dateB - dateA;
+      });
+
+      // Re-render sorted
+      cards.forEach(card => grid.appendChild(card));
+
+      // Search filter
+      searchInput.addEventListener('input', e => {
+        const term = e.target.value.toLowerCase();
+        cards.forEach(card => {
+          const title = card.dataset.title.toLowerCase();
+          card.style.display = title.includes(term) ? 'flex' : 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
