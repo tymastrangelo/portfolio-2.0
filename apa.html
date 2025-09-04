@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Animal Protection Alliance | Elon University</title>
+  <meta name="description" content="Volunteer with local shelters, join treat-baking workshops, and help animals at Elon University." />
+  <meta name="theme-color" content="#0d47a1" />
+  <style>
+    /* ========== MOBILE-FIRST TOKENS ========== */
+    :root{
+      --ink:#0b1220;
+      --muted:#5b6b8a;
+      --bg:#f6f9ff;
+      --card:#fff;
+
+      --blue-900:#0d47a1;
+      --blue-800:#114faa;
+      --blue-700:#1565c0;
+      --blue-100:#e3f2fd;
+      --blue-050:#f0f6ff;
+
+      --radius:14px;
+      --shadow:0 8px 26px rgba(13,71,161,.09);
+      --ring:0 0 0 3px rgba(21,101,192,.28);
+    }
+
+    /* ========== BASE ========== */
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      color:var(--ink);
+      background:var(--bg);
+      line-height:1.55;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+
+    a, button { touch-action: manipulation; }
+
+    /* Skip link for a11y */
+    .skip {
+      position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden;
+    }
+    .skip:focus {
+      position:fixed; left:16px; top:16px; width:auto; height:auto; padding:.6rem .9rem;
+      background:#fff; border-radius:10px; box-shadow:var(--ring); z-index:1000;
+    }
+
+    /* ========== NAV (compact on mobile) ========== */
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter:saturate(180%) blur(8px);
+      background:rgba(255,255,255,.75);
+      border-bottom:1px solid rgba(13,71,161,.08);
+    }
+    .nav-inner{
+      max-width:1100px; margin:0 auto;
+      padding:.7rem .9rem;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:.6rem;
+    }
+    .brand { display:flex; align-items:center; gap:.55rem; text-decoration:none; color:inherit; }
+    .brand-badge{
+      width:32px; height:32px; border-radius:10px;
+      background:linear-gradient(135deg, var(--blue-700), var(--blue-900));
+      display:grid; place-items:center; color:#fff; font-weight:800; font-size:.85rem;
+      box-shadow:0 6px 16px rgba(13,71,161,.25);
+      user-select:none;
+    }
+    .brand-title{ margin:0; font-size:.98rem; letter-spacing:.2px; }
+
+    .nav-cta{
+      display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+      min-height:44px; padding:.6rem .9rem;
+      background:var(--blue-900); color:#fff; text-decoration:none; font-weight:800;
+      border-radius:11px; box-shadow:0 10px 22px rgba(13,71,161,.25);
+      transition:transform .08s ease, background .2s ease;
+    }
+    .nav-cta:hover{ background:var(--blue-700); transform:translateY(-1px); }
+    .nav-cta:focus-visible{ outline:none; box-shadow:var(--ring); }
+
+    /* ========== HERO (mobile-first) ========== */
+    .hero{
+      position:relative; isolation:isolate;
+      background:url("apa_images/hero.jpg") center/cover no-repeat;
+      min-height:64vh;
+      display:grid; place-items:end;
+      text-align:center;
+    }
+    .hero::after{
+      content:""; position:absolute; inset:0; z-index:0;
+      background:linear-gradient(180deg, rgba(2,11,28,.30) 0%, rgba(2,11,28,.70) 85%);
+    }
+    .hero-inner{
+      position:relative; z-index:1; color:#fff;
+      padding: clamp(2rem, 5vw, 3rem) .9rem calc(1rem + env(safe-area-inset-bottom));
+      width:100%;
+    }
+    .kicker{
+      display:inline-flex; gap:.45rem; align-items:center;
+      background:rgba(255,255,255,.16);
+      padding:.34rem .6rem; border-radius:999px; font-weight:800; font-size:.85rem; letter-spacing:.3px;
+    }
+    .hero h2{
+      margin:.55rem 0 .35rem 0;
+      font-size: clamp(1.65rem, 7vw, 2.6rem);
+      line-height:1.1; font-weight:900;
+      text-shadow:0 10px 28px rgba(0,0,0,.35);
+    }
+    .hero p{
+      margin:0 auto; max-width:38ch;
+      font-size: clamp(.98rem, 4.2vw, 1.1rem);
+      opacity:.98;
+    }
+    .hero-cta{
+      margin-top:.9rem; display:flex; gap:.6rem; flex-wrap:wrap; justify-content:center;
+    }
+
+    /* Buttons */
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+      min-height:48px; padding:.85rem 1rem;
+      border:0; border-radius:12px; cursor:pointer; text-decoration:none; white-space:nowrap;
+      font-weight:800; font-size:1rem;
+      transition:transform .08s ease, background .2s ease, box-shadow .2s ease;
+    }
+    .btn-primary{ background:#fff; color:var(--blue-900); box-shadow:0 12px 24px rgba(255,255,255,.14), 0 6px 18px rgba(13,71,161,.35); }
+    .btn-primary:hover{ transform:translateY(-1px); }
+    .btn-secondary{ background:rgba(255,255,255,.14); color:#fff; border:1px solid rgba(255,255,255,.35); }
+    .btn-secondary:hover{ background:rgba(255,255,255,.22); }
+
+    /* ========== SECTIONS ========== */
+    .section{ padding: 1.4rem .9rem; }
+    .container{ max-width:1100px; margin:0 auto; }
+
+    .heading{ margin:0 0 .8rem 0; }
+    .heading h3{ margin:0; font-size: clamp(1.15rem, 5vw, 1.5rem); color:var(--blue-900); }
+    .sub{ margin:.25rem 0 0 0; color:var(--muted); font-size:.98rem; }
+
+    /* WHAT WE DO (stacked on mobile, cards grow on desktop) */
+    .grid{ display:grid; gap:.8rem; }
+    .card{
+      background:var(--card); border:1px solid rgba(13,71,161,.09);
+      border-radius:var(--radius); padding:1rem;
+      box-shadow:var(--shadow);
+      display:flex; align-items:flex-start; gap:.8rem;
+    }
+    .icon{
+      width:40px; height:40px; border-radius:10px; flex:0 0 40px;
+      display:grid; place-items:center;
+      background:linear-gradient(135deg, var(--blue-100), var(--blue-050));
+      border:1px solid #d5e6ff;
+    }
+    .card h4{ margin:.1rem 0 .2rem; font-size:1rem; }
+    .card p{ margin:0; color:#344866; font-size:.97rem; }
+
+    /* STEPS (compact, touch-friendly) */
+    .steps{
+      background:linear-gradient(180deg, #fff, #f4f8ff);
+      border:1px solid rgba(13,71,161,.09);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      display:grid; gap:.6rem; padding:.7rem;
+    }
+    .step{
+      display:flex; gap:.6rem; align-items:flex-start;
+      background:#fff; border:1px dashed #d9e8ff; border-radius:12px; padding:.7rem;
+    }
+    .step-num{
+      width:28px; height:28px; border-radius:999px; flex:0 0 28px;
+      display:grid; place-items:center; color:#fff; font-weight:900; font-size:.9rem;
+      background:var(--blue-900);
+    }
+    .step p{ margin:.1rem 0 0; color:#2b3a57; font-size:.98rem; }
+
+    /* FAQ (native <details>, bigger tap area) */
+    .faq{ display:grid; gap:.6rem; }
+    details{
+      background:#fff; border:1px solid #dbe8ff; border-radius:12px; padding:.8rem;
+      box-shadow:var(--shadow);
+    }
+    summary{
+      cursor:pointer; list-style:none; font-weight:800; color:#183461; font-size:1rem;
+    }
+    summary::-webkit-details-marker{ display:none; }
+    details[open]{ border-color:#bcd5ff; }
+    details p{ margin:.5rem 0 0; color:#33476b; }
+
+    /* OFFICERS (stacked, become grid later) */
+    .officers{ display:grid; gap:.7rem; }
+    .person{
+      background:#fff; border:1px solid rgba(13,71,161,.09); border-radius:14px;
+      padding:.75rem .9rem; display:flex; align-items:center; gap:.7rem; box-shadow:var(--shadow);
+    }
+    .avatar{
+      width:40px; height:40px; border-radius:12px; display:grid; place-items:center; font-weight:900; color:#fff;
+      background:linear-gradient(135deg, var(--blue-700), var(--blue-900));
+      box-shadow:0 8px 18px rgba(13,71,161,.25); user-select:none;
+    }
+    .role{ margin:0; font-weight:800; font-size:.95rem; }
+    .name{ margin:0; color:#3a4d72; font-size:.95rem; }
+
+    /* PARTNERS chips */
+    .chips{ display:flex; flex-wrap:wrap; gap:.5rem; }
+    .chip{
+      padding:.45rem .7rem; border-radius:999px; background:#eef5ff; border:1px solid #d6e6ff; color:#27406e; font-weight:700; font-size:.9rem;
+    }
+
+    /* FOOTER */
+    footer{ background:var(--blue-900); color:#dfeaff; padding:1.4rem .9rem calc(1rem + env(safe-area-inset-bottom)); margin-top:1.2rem; }
+    .footer-inner{ max-width:1100px; margin:0 auto; display:grid; gap:.7rem; }
+    .footer-actions{ display:flex; gap:.6rem; flex-wrap:wrap; }
+    .footer a{ color:#a7c9ff; text-decoration:none; font-weight:800; }
+    .min{ color:#b8c9eb; margin:0; font-size:.95rem; }
+
+    /* STICKY CTA (mobile only) */
+    .sticky{
+      position:fixed; left:0; right:0; bottom:0; z-index:60;
+      padding:.6rem clamp(.6rem, 4vw, 1rem) calc(.6rem + env(safe-area-inset-bottom));
+      display:flex; justify-content:center;
+      background:linear-gradient(180deg, transparent, rgba(255,255,255,.92));
+      backdrop-filter: blur(8px);
+    }
+    .sticky .btn-primary{
+      background:var(--blue-900); color:#fff; min-width:min(92vw, 680px);
+    }
+    @media (min-width:880px){
+      .grid{ grid-template-columns: repeat(12, 1fr); }
+      .card{ grid-column: span 4; }
+      .officers{ grid-template-columns: repeat(12, 1fr); }
+      .person{ grid-column: span 4; }
+      .section{ padding: 2rem 1rem; }
+      .nav-inner{ padding:.8rem 1rem; }
+      .hero{ min-height:62vh; place-items:center; }
+      .hero-inner{ padding: 3rem 1rem 2rem; }
+      .sticky{ display:none; }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      .nav-cta, .btn, .btn-primary { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- NAV -->
+  <nav class="nav" aria-label="Top">
+    <div class="nav-inner">
+      <a class="brand" href="#top" aria-label="Animal Protection Alliance Home">
+        <div class="brand-badge">APA</div>
+        <p class="brand-title">Animal Protection Alliance · Elon</p>
+      </a>
+      <a class="nav-cta" href="https://elon.campuslabs.com/engage/organization/elonanimalprotectionalliance?utm_source=qr&utm_medium=qrpage&utm_campaign=orgfair" target="_blank" rel="noopener">
+        Join on PhoenixCONNECT
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="top" class="hero" role="banner" aria-label="Hero">
+    <div class="hero-inner">
+      <span class="kicker">Volunteer • Workshops • Community</span>
+      <h2>Help Animals. Build Community.</h2>
+      <p>We partner with local shelters, host treat-baking workshops, run supply drives, and take dogs out for the day.</p>
+      <div class="hero-cta">
+        <!-- <a class="btn btn-primary" href="https://elon.campuslabs.com/engage/organization/elonanimalprotectionalliance?utm_source=qr&utm_medium=hero&utm_campaign=orgfair" target="_blank" rel="noopener" aria-label="Join on PhoenixCONNECT">
+          Join on PhoenixCONNECT
+        </a> -->
+        <a class="btn btn-secondary" href="mailto:tmastrangelo@elon.edu" aria-label="Email APA">Email us</a>
+        <a class="btn btn-secondary" href="https://instagram.com/animalprotectionalliance.elon" target="_blank" rel="noopener">
+          Instagram
+        </a>
+      </div>  
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- WHAT WE DO -->
+    <section class="section" aria-labelledby="what">
+      <div class="container">
+        <div class="heading">
+          <h3 id="what">What We Do</h3>
+          <p class="sub">Hands-on volunteering, low-lift commitments, real impact.</p>
+        </div>
+
+        <div class="grid" aria-label="Activities">
+          <article class="card">
+            <div class="icon" aria-hidden="true">
+              <!-- Paw -->
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21c2.7 0 6-1.3 6-4 0-1.9-2.2-3.2-4.1-3.7a1 1 0 0 0-.8.2l-1.1.8-1.1-.8a1 1 0 0 0-.8-.2C8.2 13.8 6 15.1 6 17c0 2.7 3.3 4 6 4Z" fill="#1565c0"/><circle cx="5.5" cy="9.5" r="2.2" fill="#1565c0"/><circle cx="18.5" cy="9.5" r="2.2" fill="#1565c0"/><circle cx="9" cy="6.5" r="2.3" fill="#1565c0"/><circle cx="15" cy="6.5" r="2.3" fill="#1565c0"/></svg>
+            </div>
+            <div>
+              <h4>Shelter Volunteering</h4>
+              <p>Support Burlington Humane Society & Animal Services with care tasks, walks, and enrichment.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="icon" aria-hidden="true">
+              <!-- Bone -->
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 6.5a2.5 2.5 0 0 1 5 0c0 1.4-1.2 2.6-2.5 3.8C8.2 9.1 7 7.9 7 6.5Z" stroke="#1565c0" stroke-width="1.8" fill="#e3f2fd"/><rect x="3" y="12" width="18" height="4" rx="2" fill="#1565c0" opacity=".9"/></svg>
+            </div>
+            <div>
+              <h4>Dog Day-Outs</h4>
+              <p>Give shelter dogs a break with campus walks and park trips coordinated through the club.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="icon" aria-hidden="true">
+              <!-- Whisk -->
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 4c2 2-2 6-4 8s-6 6-8 4 2-6 4-8 6-6 8-4Z" stroke="#1565c0" stroke-width="1.8" fill="#e3f2fd"/><path d="M13 14l7 7" stroke="#1565c0" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <h4>Treat-Baking Workshops</h4>
+              <p>Make pet treats together, learn basic tips, and donate batches to shelters.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="icon" aria-hidden="true">
+              <!-- Box -->
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 7l9-4 9 4-9 4-9-4Zm0 4l9 4 9-4M3 7v10l9 4 9-4V7" stroke="#1565c0" stroke-width="1.8" fill="#e3f2fd"/></svg>
+            </div>
+            <div>
+              <h4>Supply Drives</h4>
+              <p>Collect food, toys, and essentials—easy ways to help even on busy weeks.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="icon" aria-hidden="true">
+              <!-- Megaphone -->
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M2 11h3l8-5v15l-8-5H2V11Z" fill="#1565c0" opacity=".9"/><path d="M13 6l8-2v16l-8-2V6Z" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.6"/></svg>
+            </div>
+            <div>
+              <h4>Campus Events</h4>
+              <p>Pop-ups and awareness campaigns to grow a community that loves animals.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="icon" aria-hidden="true">
+              <!-- People -->
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="3" fill="#1565c0"/><circle cx="16" cy="10" r="3" fill="#1565c0"/><path d="M3 18c0-2.2 2.8-4 5-4s5 1.8 5 4v1H3v-1Zm9 1c0-1.9 2.2-3.5 4.5-3.5S21 17.1 21 19v0.9H12V19Z" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.4"/></svg>
+            </div>
+            <div>
+              <h4>Low-Lift Community</h4>
+              <p>We meet monthly and run weekend events—join as your schedule allows.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW TO GET INVOLVED -->
+    <section class="section" aria-labelledby="how">
+      <div class="container">
+        <div class="heading">
+          <h3 id="how">How to Get Involved</h3>
+          <p class="sub">Three quick steps.</p>
+        </div>
+        <div class="steps" aria-label="3 Steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <p><strong>Join on PhoenixCONNECT</strong> to get announcements and opportunities.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <p><strong>Show up monthly</strong>—short meetings, clear sign-ups, flexible roles.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <p><strong>Pick a weekend activity</strong> (shelter visit, drive, dog day-out).</p>
+          </div>
+        </div>
+        <div style="margin-top:.7rem; display:flex; gap:.5rem; flex-wrap:wrap;">
+          <span class="chip">Monthly meetings</span>
+          <span class="chip">Weekend events</span>
+          <span class="chip">Ride-shares available</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" aria-labelledby="faq">
+      <div class="container">
+        <div class="heading">
+          <h3 id="faq">FAQ</h3>
+          <p class="sub">More questions? <a href="mailto:tmastrangelo@elon.edu">Email us</a>.</p>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>Do I need prior experience?</summary>
+            <p>Nope—just bring your love for animals. We’ll show you the ropes.</p>
+          </details>
+          <details>
+            <summary>What if I don’t have transportation?</summary>
+            <p>We often coordinate rides to off-campus sites—note it when you sign up.</p>
+          </details>
+          <details>
+            <summary>How often do you meet?</summary>
+            <p>Once a month on campus, plus optional weekend events.</p>
+          </details>
+          <details>
+            <summary>Time commitment?</summary>
+            <p>As much or as little as you’d like. There’s always a way to help.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFFICERS -->
+    <section class="section" aria-labelledby="officers">
+      <div class="container">
+        <div class="heading">
+          <h3 id="officers">Officers</h3>
+          <p class="sub">Student-led, community-minded.</p>
+        </div>
+        <div class="officers" aria-label="Officer list">
+          <div class="person">
+            <div class="avatar">AS</div>
+            <div>
+              <p class="role">Advisor</p>
+              <p class="name">Safia Swimelar</p>
+            </div>
+          </div>
+          <div class="person">
+            <div class="avatar">SD</div>
+            <div>
+              <p class="role">President</p>
+              <p class="name">Sienna Dzumhur</p>
+            </div>
+          </div>
+          <div class="person">
+            <div class="avatar">EM</div>
+            <div>
+              <p class="role">Vice President</p>
+              <p class="name">Eliza Menser</p>
+            </div>
+          </div>
+          <div class="person">
+            <div class="avatar">TM</div>
+            <div>
+              <p class="role">Treasurer</p>
+              <p class="name">Tyler Mastrangelo</p>
+            </div>
+          </div>
+          <div class="person">
+            <div class="avatar">CK</div>
+            <div>
+              <p class="role">Secretary</p>
+              <p class="name">Corinne Kudzinski</p>
+            </div>
+          </div>
+          <div class="person">
+            <div class="avatar">MZ</div>
+            <div>
+              <p class="role">Social Media Chair</p>
+              <p class="name">Madeline Zarrett</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARTNERS -->
+    <section class="section" aria-labelledby="partners">
+      <div class="container">
+        <div class="heading">
+          <h3 id="partners">Local Organizations We Collaborate With</h3>
+          <p class="sub">We’re building relationships with groups like:</p>
+        </div>
+        <div class="chips" aria-label="Partners">
+          <span class="chip">Burlington Humane Society</span>
+          <span class="chip">Burlington Animal Services</span>
+          <span class="chip">Burlington County Animal Shelter</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-actions">
+        <a class="btn btn-primary" href="https://elon.campuslabs.com/engage/organization/elonanimalprotectionalliance?utm_source=qr&utm_medium=footer&utm_campaign=orgfair" target="_blank" rel="noopener">
+          Join on PhoenixCONNECT
+        </a>
+        <a class="btn btn-secondary" href="mailto:tmastrangelo@elon.edu">Email us</a>
+      </div>
+      <p class="min">Questions? <a href="mailto:tmastrangelo@elon.edu">tmastrangelo@elon.edu</a> · Instagram: <a href="https://instagram.com/animalprotectionalliance.elon" target="_blank" rel="noopener">@animalprotectionalliance.elon</a></p>
+      <p class="min">© <span id="year"></span> Animal Protection Alliance · Elon University</p>
+    </div>
+  </footer>
+
+  <!-- Sticky CTA (visible on mobile) -->
+  <div class="sticky" aria-hidden="false">
+    <a class="btn btn-primary" href="https://elon.campuslabs.com/engage/organization/elonanimalprotectionalliance?utm_source=qr&utm_medium=sticky&utm_campaign=orgfair" target="_blank" rel="noopener">
+      Join on PhoenixCONNECT
+    </a>
+  </div>
+
+  <script>
+    // Year stamp
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
