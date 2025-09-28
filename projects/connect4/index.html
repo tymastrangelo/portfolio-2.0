@@ -9,13 +9,13 @@
   <link rel="stylesheet" href="connect4.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
-<body class="min-h-screen bg-gray-50">
+<body class="bg-slate-50 text-slate-800">
   <div id="nav-container"></div>
 
-  <main class="pt-24 pb-12 container mx-auto px-6 text-center">
-    <h1 class="text-4xl font-bold mb-4">Connect 4</h1>
-    <h2 id="winner" class="text-2xl font-semibold text-red-600 mb-4"></h2>
-    <button id="playAgain" class="play-again-btn" style="display: none;" onclick="resetGame()">🔄 Play Again</button>
+  <main class="pt-24 sm:pt-32 pb-16 container mx-auto px-6 text-center">
+    <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 mb-4">Connect 4</h1>
+    <h2 id="winner" class="text-2xl font-semibold text-sky-600 mb-4 h-8"></h2>
+    <button id="playAgain" class="inline-flex items-center justify-center px-6 py-3 border border-slate-300 text-slate-700 font-semibold rounded-lg hover:bg-slate-100 transition-colors duration-200" style="display: none;" onclick="resetGame()">🔄 Play Again</button>
     <div id="board" class="mt-6"></div>
   </main>
 

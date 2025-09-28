@@ -3,80 +3,163 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home | Tyler Mastrangelo</title>
+  <title>Tyler Mastrangelo | Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body class="min-h-screen bg-gray-50">
+<body class="bg-slate-50 font-sans text-slate-800">
+
+  <!-- Navigation -->
   <div id="nav-container"></div>
 
-  <!-- ✅ Home content directly embedded here -->
-  <main class="pt-24 pb-12 max-w-screen-xl mx-auto px-6">
-    <div class="flex flex-col-reverse md:flex-row items-center justify-between gap-y-12 md:gap-x-12">
-      <!-- Text Section -->
-      <div class="w-full md:w-1/2 text-center md:text-left">
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
-          Hello, I'm <span class="typewriter pr-2">Tyler Mastrangelo</span>
-        </h1>
-        <p class="text-lg sm:text-xl mb-8 text-gray-700">
-          Business Founder | Computer Science student | D1 Cross Country Runner
+  <!-- Hero Section -->
+  <main class="pt-24 sm:pt-32 pb-16">
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 md:px-8">
+      <div class="grid md:grid-cols-5 gap-12 items-center">
+        <!-- Text Content -->
+        <div class="md:col-span-3 text-center md:text-left">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900">
+            <span class="block">Tyler Mastrangelo</span>
+            <span class="typewriter-container block text-2xl sm:text-3xl text-slate-800 font-medium mt-2">
+              <span class="typewriter">Student, Developer, Athlete</span>
+            </span>
+          </h1>
+          <p class="mt-6 max-w-2xl mx-auto md:mx-0 text-lg sm:text-xl text-slate-600">
+            Computer Science student at Elon University with a passion for cybersecurity, software development, and entrepreneurship.
+          </p>
+          <div class="mt-8 flex flex-wrap justify-center md:justify-start gap-4">
+            <a href="contact.html"
+              class="inline-flex items-center justify-center px-6 py-3 bg-sky-600 text-white font-semibold rounded-lg shadow-md hover:bg-sky-700 transition-colors duration-200">
+              Get In Touch
+            </a>
+            <a href="TylerMastrangeloResume.pdf" target="_blank"
+              class="inline-flex items-center justify-center px-6 py-3 border border-slate-300 text-slate-700 font-semibold rounded-lg hover:bg-slate-100 hover:border-slate-400 transition-colors duration-200">
+              View Resume <i class="fas fa-arrow-right ml-2 text-sm"></i>
+            </a>
+          </div>
+        </div>
+        <!-- Image -->
+        <div class="md:col-span-2 flex justify-center md:justify-end">
+          <div class="relative w-64 h-64 sm:w-80 sm:h-80">
+            <div class="absolute inset-0 bg-gradient-to-br from-slate-800 to-sky-700 rounded-full transform -rotate-12"></div>
+            <img src="images/pfp.jpeg" alt="Tyler Mastrangelo"
+              class="relative w-full h-full rounded-full object-cover object-top shadow-xl border-4 border-white" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Snippet -->
+    <section class="py-20 sm:py-24">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">A Bit About Me</h2>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          I'm a Computer Science major at Elon University with a focus on Cybersecurity and Psychology. I'm currently developing a mobile events app to help students get more involved on campus. Outside of class, I founded <a href="https://bufferbros.org" target="_blank" class="font-semibold text-sky-600 underline hover:text-sky-700">Buffer Bros</a>, a mobile car detailing business where I honed my skills in leadership and client relations. I thrive on blending technical challenges with real-world problem-solving.
         </p>
-        <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
-          <a href="about.html" class="px-6 py-3 bg-black text-white rounded hover:bg-gray-800 transition text-center">
-            Learn More
-          </a>
-          <a href="projects.html" class="px-6 py-3 border border-black rounded hover:bg-gray-100 transition text-center">
-            View Projects
+      </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="bg-white py-20 sm:py-24 border-t border-b border-slate-200">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 md:px-8">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 text-center mb-12">Featured Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          <!-- Project: Campus Events App -->
+          <div class="bg-slate-50 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col">
+            <div class="p-6 flex-grow flex flex-col">
+              <div class="flex items-center mb-3">
+                <i class="fas fa-mobile-alt text-xl text-sky-600 mr-3"></i>
+                <h3 class="text-xl font-semibold text-slate-900">Campus Events App</h3>
+              </div>
+              <p class="text-slate-600 mb-4 flex-grow">
+                A mobile app for Elon University clubs to post events and for students to get involved. Currently in development.
+              </p>
+              <div class="mt-auto pt-4 border-t border-slate-200 flex justify-between items-center">
+                <span class="text-sm bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full font-medium">In Progress</span>
+                <a href="projects.html" class="font-semibold text-sky-600 hover:underline">Learn More <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 1: Connect 4 -->
+          <div class="bg-slate-50 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col">
+            <div class="p-6 flex-grow flex flex-col">
+              <div class="flex items-center mb-3">
+                <i class="fas fa-gamepad text-xl text-sky-600 mr-3"></i>
+                <h3 class="text-xl font-semibold text-slate-900">Connect 4 Game</h3>
+              </div>
+              <p class="text-slate-600 mb-4 flex-grow">
+                A classic 2-player Connect 4 game built with vanilla JavaScript, fully responsive and playable in the browser.
+              </p>
+              <div class="mt-auto pt-4 border-t border-slate-200 flex justify-between items-center">
+                <span class="text-sm bg-slate-200 text-slate-800 px-3 py-1 rounded-full font-medium">JavaScript</span>
+                <a href="projects/connect4/index.html" class="font-semibold text-sky-600 hover:underline">Play Game <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: AWS Notes App -->
+          <div class="bg-slate-50 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col">
+            <div class="p-6 flex-grow flex flex-col">
+              <div class="flex items-center mb-3">
+                <i class="fab fa-aws text-xl text-sky-600 mr-3"></i>
+                <h3 class="text-xl font-semibold text-slate-900">Secure Notes App</h3>
+              </div>
+              <p class="text-slate-600 mb-4 flex-grow">
+                An authentication-based notes application leveraging AWS S3 and IAM for secure, user-specific data storage and access control.
+              </p>
+              <div class="mt-auto pt-4 border-t border-slate-200 flex justify-between items-center">
+                <span class="text-sm bg-slate-200 text-slate-800 px-3 py-1 rounded-full font-medium">AWS</span>
+                <a href="projects.html" class="font-semibold text-sky-600 hover:underline">Learn More <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Iron Man Helmet -->
+          <div class="bg-slate-50 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col">
+            <div class="p-6 flex-grow flex flex-col">
+              <div class="flex items-center mb-3">
+                <i class="fas fa-robot text-xl text-sky-600 mr-3"></i>
+                <h3 class="text-xl font-semibold text-slate-900">IoT Iron Man Helmet</h3>
+              </div>
+              <p class="text-slate-600 mb-4 flex-grow">
+                A 3D-printed, Arduino-powered prototype with servo motors and LED integration. A fun blend of hardware design and embedded systems.
+              </p>
+              <div class="mt-auto pt-4 border-t border-slate-200 flex justify-between items-center">
+                <span class="text-sm bg-slate-200 text-slate-800 px-3 py-1 rounded-full font-medium">Arduino</span>
+                <a href="projects.html" class="font-semibold text-sky-600 hover:underline">Learn More <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="text-center mt-12">
+          <a href="projects.html"
+            class="inline-flex items-center px-6 py-3 border border-slate-300 text-slate-700 font-semibold rounded-lg hover:bg-slate-100 transition-colors duration-200">
+            View All Projects
           </a>
         </div>
       </div>
+    </section>
 
-      <!-- Image Section -->
-      <div class="w-full md:w-1/2 flex justify-center">
-        <div class="w-full max-w-[480px] aspect-video rounded-lg overflow-hidden shadow-xl border border-gray-200">
-          <img src="images/tyler.jpeg" alt="Tyler Mastrangelo" class="w-full h-full object-cover object-top" />
-        </div>
-      </div>
-    </div>
-
-    <!-- Highlights -->
-    <div class="mt-24 px-4 sm:px-0">
-      <div class="section-divider my-12"></div>
-      <h2 class="text-3xl font-bold mb-8 text-center">Quick Highlights</h2>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <a href="https://bufferbros.org" target="_blank" class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition block">
-          <div class="w-12 h-12 bg-black rounded-full flex items-center justify-center mb-4">
-            <i class="fas fa-briefcase text-white"></i>
-          </div>
-          <h3 class="text-xl font-semibold mb-2">Business Owner</h3>
-          <p class="text-gray-600">
-            Founder of Buffer Bros, a mobile car detailing business delivering high-quality service on-site.
-          </p>
-        </a>
-        <a href="https://elonphoenix.com/sports/mens-cross-country/roster/tyler-mastrangelo/10607" target="_blank" class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition block">
-          <div class="w-12 h-12 bg-black rounded-full flex items-center justify-center mb-4">
-            <i class="fas fa-running text-white"></i>
-          </div>
-          <h3 class="text-xl font-semibold mb-2">D1 Athlete</h3>
-          <p class="text-gray-600">
-            Competing in Cross Country at the NCAA Division 1 level for Elon University.
-          </p>
-        </a>
-        <a href="projects.html" class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition block">
-          <div class="w-12 h-12 bg-black rounded-full flex items-center justify-center mb-4">
-            <i class="fas fa-code text-white"></i>
-          </div>
-          <h3 class="text-xl font-semibold mb-2">Developer</h3>
-          <p class="text-gray-600">
-            Passionate about building software solutions with a focus on security and efficiency.
-          </p>
+    <!-- CTA -->
+    <section class="py-20 sm:py-24">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Let's Build Something</h2>
+        <p class="text-lg text-slate-600 mb-8">
+          Have a project in mind, a question about my work, or just want to connect? I'd love to hear from you.
+        </p>
+        <a href="contact.html"
+          class="inline-flex items-center justify-center px-8 py-4 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-slate-800 transition-colors duration-200">
+          Send a Message
         </a>
       </div>
-    </div>
+    </section>
   </main>
 
+  <!-- Footer -->
   <div id="footer-container"></div>
 
   <script src="js/main.js" defer></script>

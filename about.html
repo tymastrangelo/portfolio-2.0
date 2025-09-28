@@ -6,116 +6,114 @@
   <title>About | Tyler Mastrangelo</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
   <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body class="min-h-screen bg-gray-50">
+<body class="bg-white font-sans text-slate-800">
   <!-- Navigation -->
   <div id="nav-container"></div>
 
   <!-- Page Content -->
-  <main class="pt-24 pb-12 container mx-auto px-6">
-    <div class="max-w-4xl mx-auto">
-      <h1 class="text-4xl font-bold mb-8">About Me</h1>
+  <main class="pt-24 sm:pt-32">
+    <!-- Mission Statement -->
+    <section class="max-w-4xl mx-auto px-6 text-center mb-20 md:mb-32">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight">
+        I build tools that solve real problems.
+      </h1>
+    </section>
 
-      <div class="flex flex-col md:flex-row gap-12">
-        <!-- Left Sidebar -->
-        <div class="md:w-1/3">
-          <div class="bg-white p-6 rounded-lg shadow-sm md:sticky md:top-24">
-            <div class="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden shadow-md">
-              <img src="images/about.jpeg" alt="Tyler Mastrangelo" class="w-full h-full object-cover object-top" />
-            </div>
-            <h2 class="text-2xl font-semibold text-center mb-2">Tyler Mastrangelo</h2>
-            <p class="text-gray-600 text-center mb-4">Student | Athlete | Developer</p>
-            <div class="flex justify-center space-x-4 mb-6">
-              <a href="https://github.com/tymastrangelo" target="_blank" class="text-gray-700 hover:text-black">
-                <i class="fab fa-github text-xl"></i>
-              </a>
-              <a href="https://www.linkedin.com/in/tymastrangelo" target="_blank" class="text-gray-700 hover:text-black">
-                <i class="fab fa-linkedin text-xl"></i>
-              </a>
-              <a href="https://www.instagram.com/tymastrangelo" target="_blank" class="text-gray-700 hover:text-black">
-                <i class="fab fa-instagram text-xl"></i>
-              </a>
-            </div>
-            <div class="border-t pt-4">
-              <h3 class="font-semibold mb-2">Details</h3>
-              <div class="space-y-2">
-                <div class="flex items-center text-sm text-gray-600">
-                  <i class="fas fa-map-marker-alt w-5 mr-2 text-black"></i>
-                  <span>Elon University, NC</span>
-                </div>
-                <div class="flex items-center text-sm text-gray-600">
-                  <i class="fas fa-graduation-cap w-5 mr-2 text-black"></i>
-                  <span>Computer Science</span>
-                </div>
-                <div class="flex items-center text-sm text-gray-600">
-                  <i class="fas fa-running w-5 mr-2 text-black"></i>
-                  <span>Cross Country</span>
-                </div>
-              </div>
-            </div>
+    <!-- My Story Section -->
+    <section class="max-w-5xl mx-auto px-6 mb-20 md:mb-32">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+        <article class="order-2 md:order-1">
+          <header>
+            <h2 class="text-3xl font-bold text-slate-900 mb-4">My Story</h2>
+          </header>
+          <div class="space-y-4 text-lg text-slate-600 leading-relaxed">
+              <p>
+                I'm a Computer Science student at Elon University, but I see myself as more than just a student—I'm a builder. The discipline I learned as a competitive athlete now fuels my passion for software development and cybersecurity.
+              </p>
+              <p>
+                For me, code is a tool for impact. It's about finding an inefficiency or a need within a community and architecting a solution. This led me to found <a href="https://bufferbros.org" target="_blank" class="text-sky-600 font-medium underline hover:text-sky-700">Buffer Bros</a>, and it's the driving force behind the campus events app I'm currently developing.
+              </p>
           </div>
+        </article>
+        <div class="order-1 md:order-2 flex justify-center">
+          <img src="images/guitar.jpg" alt="Tyler Mastrangelo playing an acoustic guitar" class="w-64 h-64 rounded-lg object-cover object-top shadow-xl transform md:rotate-3 border border-slate-100" />
         </div>
+      </div>
+    </section>
 
-        <!-- Right Content -->
-        <div class="md:w-2/3">
-          <div class="bg-white p-8 rounded-lg shadow-sm mb-8">
-            <h2 class="text-2xl font-semibold mb-4">My Journey</h2>
-            <p class="mb-4 text-gray-700 leading-relaxed">
-              I’m a first-year Computer Science major at Elon University with a strong passion for cybersecurity and software development. I also compete in NCAA Division I Cross Country, which has helped me develop discipline, focus, and balance.
-            </p>
-            <p class="mb-4 text-gray-700 leading-relaxed">
-              Beyond academics and athletics, I’m the founder of <a href="https://bufferbros.org" target="_blank" class="text-black font-medium underline hover:text-gray-700">Buffer Bros</a> — a mobile car detailing business I launched to deliver high-quality, on-location auto care. Running a business has strengthened my skills in leadership, branding, and client relations, while teaching me how to balance technical work with real-world problem-solving.
-            </p>
+    <!-- Philosophy Section -->
+    <section class="bg-slate-50 py-20 md:py-24 border-y border-slate-200">
+      <div class="max-w-5xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-slate-900 text-center mb-12">My Philosophy</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div class="text-center md:text-left">
+            <h3 class="text-xl font-semibold text-slate-900 mb-2">Purpose-Driven Development</h3>
+            <p class="text-slate-600">I focus on creating applications that serve a clear purpose, whether it's enhancing campus life or streamlining a business process.</p>
           </div>
-
-          <div class="bg-white p-8 rounded-lg shadow-sm mb-8">
-            <h2 class="text-2xl font-semibold mb-6">Education</h2>
-            <div class="space-y-6">
-              <div class="flex">
-                <div class="mr-4">
-                  <div class="w-12 h-12 bg-black rounded-full flex items-center justify-center">
-                    <i class="fas fa-university text-white"></i>
-                  </div>
-                </div>
-                <div>
-                  <h3 class="font-semibold">Elon University</h3>
-                  <p class="text-gray-600">Bachelor of Science in Computer Science</p>
-                  <p class="text-sm text-gray-500">2024 - Present</p>
-                  <p class="mt-2 text-gray-700">
-                    Minors in Cybersecurity and Psychology. Relevant coursework: Data Structures, Algorithms, Computer Systems, Ethical Hacking.
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div class="text-center md:text-left">
+            <h3 class="text-xl font-semibold text-slate-900 mb-2">Security by Design</h3>
+            <p class="text-slate-600">My interest in cybersecurity isn't just academic; I believe in building secure, resilient systems from the very first line of code.</p>
           </div>
-
-          <div class="bg-white p-8 rounded-lg shadow-sm">
-            <h2 class="text-2xl font-semibold mb-6">Skills & Interests</h2>
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <h3 class="font-semibold mb-2">Technical Skills</h3>
-                <ul class="space-y-1 text-gray-700">
-                  <li><i class="fas fa-check mr-2 text-black"></i> Python, Java, C++</li>
-                  <li><i class="fas fa-check mr-2 text-black"></i> HTML, CSS, JavaScript</li>
-                  <li><i class="fas fa-check mr-2 text-black"></i> Cybersecurity Fundamentals</li>
-                  <li><i class="fas fa-check mr-2 text-black"></i> Data Structures & Algorithms</li>
-                </ul>
-              </div>
-              <div>
-                <h3 class="font-semibold mb-2">Interests</h3>
-                <ul class="space-y-1 text-gray-700">
-                  <li><i class="fas fa-arrow-right mr-2 text-black"></i> Secure Software Development</li>
-                  <li><i class="fas fa-arrow-right mr-2 text-black"></i> Ethical Hacking</li>
-                  <li><i class="fas fa-arrow-right mr-2 text-black"></i> Sports Analytics</li>
-                  <li><i class="fas fa-arrow-right mr-2 text-black"></i> UX Psychology</li>
-                </ul>
-              </div>
-            </div>
+          <div class="text-center md:text-left">
+            <h3 class="text-xl font-semibold text-slate-900 mb-2">Entrepreneurial Mindset</h3>
+            <p class="text-slate-600">I approach every project with a founder's mentality—identifying the problem, understanding the user, and delivering value.</p>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+
+    <!-- "In The Works" Showcase -->
+    <section class="py-20 md:py-24">
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="text-center mb-12">
+          <span class="text-sm font-bold uppercase tracking-wider text-sky-600">In The Works</span>
+          <h2 class="text-3xl font-bold text-slate-900 mt-2">Building for the Elon Community</h2>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg p-8 md:p-10 grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
+          <div class="md:col-span-3">
+            <h3 class="text-2xl font-semibold text-slate-900 mb-3">Campus Events App</h3>
+            <p class="text-lg text-slate-600 leading-relaxed">
+              I'm currently developing a mobile app to centralize event information for clubs at Elon University. The goal is simple: make it easier for students to discover what's happening on campus and get involved. This project combines my skills in mobile development, backend services, and user-centric design to solve a problem I've seen firsthand.
+            </p>
+          </div>
+          <div class="md:col-span-2 flex justify-center items-center">
+            <img src="images/app-mockup.png" alt="Mockup of a campus events mobile app" class="max-w-xs w-full rounded-xl shadow-lg">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Toolkit Section -->
+    <section class="bg-slate-800 text-white pt-16 pb-20 md:pt-20 md:pb-24">
+      <div class="max-w-5xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-12">My Toolkit</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div>
+            <h3 class="text-xl font-semibold mb-4">Technologies & Languages</h3>
+            <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-4 text-4xl text-slate-400">
+              <i class="devicon-python-plain toolkit-icon" title="Python"></i>
+              <i class="devicon-java-plain toolkit-icon" title="Java"></i>
+              <i class="devicon-javascript-plain toolkit-icon" title="JavaScript"></i>
+              <i class="devicon-html5-plain toolkit-icon" title="HTML5"></i>
+              <i class="devicon-css3-plain toolkit-icon" title="CSS3"></i>
+              <i class="devicon-tailwindcss-plain toolkit-icon" title="Tailwind CSS"></i>
+              <i class="devicon-amazonwebservices-original toolkit-icon" title="AWS"></i>
+              <i class="devicon-git-plain toolkit-icon" title="Git"></i>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-4">Education</h3>
+            <p class="text-slate-300">B.S. in Computer Science</p>
+            <p class="text-slate-400">Minors in Cybersecurity & Psychology</p>
+            <p class="font-semibold text-slate-200 mt-1">Elon University</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- Footer -->
