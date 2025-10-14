@@ -25,13 +25,14 @@
       -webkit-text-fill-color: transparent;
     }
   </style>
-<body class="bg-white font-sans text-slate-800">
+</head>
+<body class="bg-white font-sans text-slate-800 min-h-screen flex flex-col">
 
   <!-- Navigation -->
   <div id="nav-container"></div>
 
   <!-- Hero Section -->
-  <main class="pt-24 sm:pt-32 pb-16">
+  <main class="pt-24 sm:pt-32 pb-16 flex-grow">
     <section class="max-w-6xl mx-auto px-6">
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <!-- Text Content -->
@@ -273,31 +274,10 @@
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="relative py-20 sm:py-32 bg-slate-900 overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-br from-sky-600/20 to-slate-900/20"></div>
-      <div class="relative max-w-4xl mx-auto px-6 text-center">
-        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6 scroll-reveal">Let's Build Something Together</h2>
-        <p class="text-lg text-slate-300 mb-8 scroll-reveal">
-          Whether you have a project in mind or just want to connect, I'm always excited to collaborate on innovative solutions.
-        </p>
-        <div class="flex flex-wrap justify-center gap-4 scroll-reveal">
-          <a href="contact.html"
-            class="inline-flex items-center px-8 py-4 bg-white text-slate-900 font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group">
-            Start a Conversation
-            <i class="fas fa-paper-plane ml-2 group-hover:translate-x-1 transition-transform"></i>
-          </a>
-          <a href="/projects.html"
-            class="inline-flex items-center px-8 py-4 bg-sky-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-sky-700">
-            View My Work <i class="fas fa-arrow-right ml-2"></i>
-          </a>
-        </div>
-      </div>
-    </section>
   </main>
 
   <!-- Footer -->
-  <div id="footer-container"></div>
+  <div id="footer-container" class="mt-auto"></div>
 
   <script src="js/main.js" defer></script>
   <script>

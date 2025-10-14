@@ -1,27 +1,99 @@
-<footer class="bg-slate-900 text-white py-12">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="flex flex-col md:flex-row justify-between items-center">
-      <div class="mb-6 md:mb-0 text-center md:text-left">
-        <h2 class="text-2xl font-bold">Tyler Mastrangelo</h2>
-        <p class="text-slate-400">Computer Science Student & Athlete</p>
+<footer class="relative bg-gradient-to-b from-slate-900 to-slate-950 text-white py-16 overflow-hidden">
+  <!-- Decorative Elements -->
+  <div class="absolute inset-0 overflow-hidden opacity-40">
+    <div class="absolute -top-32 -right-32 w-96 h-96 bg-sky-600 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-sky-800 rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="relative max-w-6xl mx-auto px-6">
+    <!-- Main Footer Content -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+      <!-- Brand Section -->
+      <div class="lg:col-span-2">
+        <a href="/" class="inline-block group mb-6">
+          <div class="flex items-center space-x-2 mb-4">
+            <span class="text-2xl font-bold bg-gradient-to-r from-sky-400 to-sky-300 bg-clip-text text-transparent">
+              TM
+            </span>
+            <div class="h-6 w-[1px] bg-slate-700"></div>
+            <span class="text-sm font-medium text-slate-400">Tyler Mastrangelo</span>
+          </div>
+        </a>
+        <p class="text-slate-400 mb-6 max-w-md">
+          Computer Science student at Elon University, passionate about building innovative solutions 
+          and exploring new technologies.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/contact.html" 
+             class="inline-flex items-center px-4 py-2 rounded-xl text-sm font-semibold
+                    bg-gradient-to-r from-sky-600 to-sky-500 hover:from-sky-500 hover:to-sky-400 
+                    transform hover:scale-105 transition-all duration-200">
+            Get in Touch
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+          <a href="/projects.html" 
+             class="inline-flex items-center px-4 py-2 rounded-xl text-sm font-semibold
+                    bg-slate-800 hover:bg-slate-700 transform hover:scale-105 transition-all duration-200">
+            View Projects
+          </a>
+        </div>
       </div>
-      <div class="flex space-x-6">
-        <a href="https://github.com/tymastrangelo" target="_blank" class="text-slate-400 hover:text-white transition">
-          <i class="fab fa-github text-xl"></i>
+
+      <!-- Quick Links -->
+      <div class="space-y-4">
+        <h3 class="text-lg font-semibold text-white mb-6">Quick Links</h3>
+        <a href="/about.html" class="block text-slate-400 hover:text-sky-400 transition-colors">About Me</a>
+        <a href="/projects.html" class="block text-slate-400 hover:text-sky-400 transition-colors">Projects</a>
+        <a href="/amazon.html" class="block text-slate-400 hover:text-sky-400 transition-colors">Amazon</a>
+        <a href="/contact.html" class="block text-slate-400 hover:text-sky-400 transition-colors">Contact</a>
+      </div>
+
+      <!-- Connect -->
+      <div class="space-y-4">
+        <h3 class="text-lg font-semibold text-white mb-6">Connect</h3>
+        <a href="https://github.com/tymastrangelo" target="_blank" 
+           class="flex items-center group text-slate-400 hover:text-white transition-colors">
+          <div class="w-8 h-8 rounded-lg bg-slate-800 group-hover:bg-slate-700 flex items-center justify-center mr-3 transition-colors">
+            <i class="fab fa-github"></i>
+          </div>
+          <span>GitHub</span>
         </a>
-        <a href="https://www.linkedin.com/in/tymastrangelo" target="_blank" class="text-slate-400 hover:text-white transition">
-          <i class="fab fa-linkedin text-xl"></i>
+        <a href="https://www.linkedin.com/in/tymastrangelo" target="_blank"
+           class="flex items-center group text-slate-400 hover:text-white transition-colors">
+          <div class="w-8 h-8 rounded-lg bg-slate-800 group-hover:bg-slate-700 flex items-center justify-center mr-3 transition-colors">
+            <i class="fab fa-linkedin"></i>
+          </div>
+          <span>LinkedIn</span>
         </a>
-        <a href="https://www.instagram.com/tymastrangelo" target="_blank" class="text-slate-400 hover:text-white transition">
-          <i class="fab fa-instagram text-xl"></i>
+        <a href="https://www.instagram.com/tymastrangelo" target="_blank"
+           class="flex items-center group text-slate-400 hover:text-white transition-colors">
+          <div class="w-8 h-8 rounded-lg bg-slate-800 group-hover:bg-slate-700 flex items-center justify-center mr-3 transition-colors">
+            <i class="fab fa-instagram"></i>
+          </div>
+          <span>Instagram</span>
         </a>
-        <a href="mailto:tmastrangelo@elon.edu" class="text-slate-400 hover:text-white transition">
-          <i class="fas fa-envelope text-xl"></i>
+        <a href="mailto:tmastrangelo@elon.edu"
+           class="flex items-center group text-slate-400 hover:text-white transition-colors">
+          <div class="w-8 h-8 rounded-lg bg-slate-800 group-hover:bg-slate-700 flex items-center justify-center mr-3 transition-colors">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <span>Email</span>
         </a>
       </div>
     </div>
-    <div class="border-t border-slate-800 mt-8 pt-8 text-center text-slate-400">
-      <p>&copy; <span id="current-year">2025</span> Tyler Mastrangelo. All rights reserved.</p>
+
+    <!-- Bottom Bar -->
+    <div class="border-t border-slate-800 pt-8 mt-12">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-slate-400 text-sm">
+          &copy; <span id="current-year">2025</span> Tyler Mastrangelo. All rights reserved.
+        </p>
+        <div class="flex items-center gap-6 text-sm text-slate-500">
+          <span>Built with ❤️ using modern web technologies</span>
+        </div>
+      </div>
     </div>
   </div>
 </footer>
