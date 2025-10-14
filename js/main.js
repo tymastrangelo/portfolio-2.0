@@ -154,5 +154,48 @@ function updateCopyrightYear() {
   }
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  const titles = document.querySelectorAll(".project-title");
+  const preview = document.getElementById("project-preview");
+  const desc = document.getElementById("project-description");
+  const link = document.getElementById("project-link");
+
+  let active = null;
+
+  const showProject = (title) => {
+    const image = title.getAttribute("data-image");
+    const description = title.getAttribute("data-description");
+    const url = title.getAttribute("data-link");
+
+    titles.forEach((t) => t.classList.remove("text-sky-600"));
+    title.classList.add("text-sky-600");
+
+    preview.src = image;
+    desc.textContent = description;
+    link.href = url || "#";
+
+    preview.style.opacity = 1;
+    preview.style.transform = "scale(1)";
+    desc.style.opacity = 1;
+
+    active = title;
+  };
+
+  // Desktop hover
+  titles.forEach((title) => {
+    title.addEventListener("mouseenter", () => {
+      if (window.innerWidth >= 768) showProject(title);
+    });
+
+    // Mobile tap
+    title.addEventListener("click", () => {
+      showProject(title);
+    });
+  });
+
+  // Auto-load first project
+  if (titles.length > 0) showProject(titles[0]);
+});
+
 // Initial call in case nav/footer fail to load
 document.addEventListener('DOMContentLoaded', initSiteFeatures);

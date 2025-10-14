@@ -11,86 +11,76 @@
 <body class="bg-slate-50 text-slate-800">
   <div id="nav-container"></div>
 
-  <main class="pt-24 sm:pt-32 pb-16 container mx-auto px-6">
-    <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 mb-4 text-center">My Projects</h1>
-    <p class="text-lg sm:text-xl text-slate-600 mb-12 text-center max-w-3xl mx-auto">A collection of my coding projects, from academic work to personal explorations in technology.</p>
+<main class="pt-24 sm:pt-32 pb-16 container mx-auto px-6">
+  <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 mb-4 text-center">
+    My Projects
+  </h1>
+  <p class="text-lg sm:text-xl text-slate-600 mb-16 text-center max-w-3xl mx-auto">
+    A collection of my coding projects, from academic work to personal explorations in technology.
+  </p>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-      <!-- Project: Campus Events App -->
-      <div class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col">
-        <div class="p-6 flex-grow flex flex-col">
-          <div class="flex items-center mb-3">
-            <i class="fas fa-mobile-alt text-xl text-sky-600 mr-3"></i>
-            <h3 class="text-xl font-semibold text-slate-900">Campus Events App</h3>
-          </div>
-          <p class="text-slate-600 mb-4 flex-grow">
-            A mobile app for Elon University clubs to post events and for students to find ways to get involved and active on campus. This project is currently in development.
-          </p>
-          <div class="mt-auto pt-4 border-t border-slate-200 flex justify-between items-center">
-            <span class="text-sm bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full font-medium">In Progress</span>
-            <a href="#" class="font-semibold text-slate-400 cursor-not-allowed">Private Repo</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 1: Connect 4 -->
-      <div class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col">
-        <div class="p-6 flex-grow flex flex-col">
-          <div class="flex items-center mb-3">
-            <i class="fas fa-gamepad text-xl text-sky-600 mr-3"></i>
-            <h3 class="text-xl font-semibold text-slate-900">Connect 4 Game</h3>
-          </div>
-          <p class="text-slate-600 mb-4 flex-grow">
-            A classic 2-player Connect 4 game built with vanilla JavaScript, fully responsive and playable in the browser.
-          </p>
-          <div class="mt-auto pt-4 border-t border-slate-200 flex justify-between items-center">
-            <span class="text-sm bg-slate-200 text-slate-800 px-3 py-1 rounded-full font-medium">JavaScript</span>
-            <a href="projects/connect4/index.html" class="font-semibold text-sky-600 hover:underline">Play Game <i class="fas fa-arrow-right text-xs ml-1"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 2: AWS Notes App -->
-      <div class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col">
-        <div class="p-6 flex-grow flex flex-col">
-          <div class="flex items-center mb-3">
-            <i class="fab fa-aws text-xl text-sky-600 mr-3"></i>
-            <h3 class="text-xl font-semibold text-slate-900">Secure Notes App</h3>
-          </div>
-          <p class="text-slate-600 mb-4 flex-grow">
-            An authentication-based notes application leveraging AWS S3 and IAM for secure, user-specific data storage and access control.
-          </p>
-          <div class="mt-auto pt-4 border-t border-slate-200 flex justify-between items-center">
-            <span class="text-sm bg-slate-200 text-slate-800 px-3 py-1 rounded-full font-medium">AWS</span>
-            <a href="#" class="font-semibold text-slate-400 cursor-not-allowed">Private Repo</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 3: Iron Man Helmet -->
-      <div class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col">
-        <div class="p-6 flex-grow flex flex-col">
-          <div class="flex items-center mb-3">
-            <i class="fas fa-robot text-xl text-sky-600 mr-3"></i>
-            <h3 class="text-xl font-semibold text-slate-900">IoT Iron Man Helmet</h3>
-          </div>
-          <p class="text-slate-600 mb-4 flex-grow">
-            A 3D-printed, Arduino-powered prototype with servo motors and LED integration. A fun blend of hardware design and embedded systems.
-          </p>
-          <div class="mt-auto pt-4 border-t border-slate-200 flex justify-between items-center">
-            <span class="text-sm bg-slate-200 text-slate-800 px-3 py-1 rounded-full font-medium">Arduino</span>
-            <a href="#" class="font-semibold text-slate-400 cursor-not-allowed">Private Repo</a>
-          </div>
-        </div>
-      </div>
+  <div class="flex flex-col md:flex-row gap-10">
+    <!-- Left: project titles -->
+    <div class="w-full md:w-1/3">
+      <ul class="space-y-3">
+        <li
+          class="project-title text-2xl font-semibold text-slate-700 hover:text-sky-600 cursor-pointer transition-colors"
+          data-image="/images/helmet1.jpg"
+          data-description="A 3D-printed, Arduino-powered prototype with servo motors and LED integration — blending hardware design and embedded systems."
+          data-link="https://github.com/tymastrangelo"
+        >
+          IoT Iron Man Helmet
+        </li>
+        <li
+          class="project-title text-2xl font-semibold text-slate-700 hover:text-sky-600 cursor-pointer transition-colors"
+          data-image="/images/connect4_1.png"
+          data-description="A classic 2-player Connect 4 game built with vanilla JavaScript, fully responsive and playable in the browser."
+          data-link="projects/connect4/index.html"
+        >
+          Connect 4 Game
+        </li>
+        <li
+          class="project-title text-2xl font-semibold text-slate-700 hover:text-sky-600 cursor-pointer transition-colors"
+          data-image="/images/notes1.jpg"
+          data-description="An authentication-based notes app leveraging AWS S3 and IAM for secure, user-specific storage and access control."
+          data-link="#"
+        >
+          Secure Notes App
+        </li>
+        <li
+          class="project-title text-2xl font-semibold text-slate-700 hover:text-sky-600 cursor-pointer transition-colors"
+          data-image="/images/events1.png"
+          data-description="A mobile app for Elon University clubs to post events and for students to discover ways to get involved on campus."
+          data-link="#"
+        >
+          Campus Events App
+        </li>
+        <!-- 
+        buffer bros crm
+        -->
+      </ul>
     </div>
 
-    <div class="text-center">
-      <a href="https://github.com/tymastrangelo" target="_blank" class="inline-flex items-center px-6 py-3 border border-slate-300 text-slate-700 font-semibold rounded-lg hover:bg-slate-100 transition-colors duration-200">
-        <i class="fab fa-github mr-2"></i> View All Projects on GitHub
-      </a>
+    <!-- Right: image + description -->
+    <div class="w-full md:w-2/3 flex flex-col items-center text-center">
+      <div class="relative w-full max-w-2xl h-[300px] sm:h-[400px] flex items-center justify-center mb-6">
+        <a id="project-link" href="#" target="_blank" class="block w-full h-full rounded-2xl overflow-hidden group">
+          <img
+            id="project-preview"
+            src=""
+            alt="Project preview"
+            class="rounded-2xl shadow-2xl object-cover w-full h-full opacity-0 transition-all duration-500 transform scale-95 
+                   group-hover:scale-105 group-hover:shadow-[0_20px_35px_rgba(0,0,0,0.3)] active:scale-95 active:shadow-[0_8px_20px_rgba(0,0,0,0.25)]"
+          />
+        </a>
+      </div>
+      <p
+        id="project-description"
+        class="text-base sm:text-lg text-slate-600 max-w-2xl opacity-0 transition-opacity duration-500 px-2"
+      ></p>
     </div>
-  </main>
+  </div>
+</main>
 
   <div id="footer-container"></div>
 
