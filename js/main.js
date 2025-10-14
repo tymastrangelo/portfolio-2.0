@@ -162,6 +162,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let active = null;
 
+  // Make project titles focusable and add keyboard support
+  titles.forEach(title => {
+    title.setAttribute("tabindex", "0");
+    title.setAttribute("role", "button");
+    title.setAttribute("aria-label", `View project: ${title.textContent.trim()}`);
+  });
+
   const showProject = (title) => {
     const image = title.getAttribute("data-image");
     const description = title.getAttribute("data-description");
@@ -174,6 +181,16 @@ document.addEventListener("DOMContentLoaded", () => {
     desc.textContent = description;
     link.href = url || "#";
 
+    // Set appropriate action text based on project type
+    const projectAction = document.getElementById("project-action");
+    if (title.textContent.includes("Game")) {
+      projectAction.textContent = "Click to Play";
+    } else if (url === "#") {
+      projectAction.textContent = "Coming Soon";
+    } else {
+      projectAction.textContent = "Click to View";
+    }
+
     preview.style.opacity = 1;
     preview.style.transform = "scale(1)";
     desc.style.opacity = 1;
@@ -181,14 +198,36 @@ document.addEventListener("DOMContentLoaded", () => {
     active = title;
   };
 
-  // Desktop hover
+  // Desktop hover and keyboard interactions
   titles.forEach((title) => {
+    // Mouse hover
     title.addEventListener("mouseenter", () => {
       if (window.innerWidth >= 768) showProject(title);
     });
 
-    // Mobile tap
+    // Click/tap
     title.addEventListener("click", () => {
+      showProject(title);
+      const projectUrl = title.getAttribute("data-link");
+      if (projectUrl && projectUrl !== "#") {
+        window.open(projectUrl, "_blank");
+      }
+    });
+
+    // Keyboard navigation
+    title.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        showProject(title);
+        const projectUrl = title.getAttribute("data-link");
+        if (projectUrl && projectUrl !== "#") {
+          window.open(projectUrl, "_blank");
+        }
+      }
+    });
+
+    // Focus handling
+    title.addEventListener("focus", () => {
       showProject(title);
     });
   });
