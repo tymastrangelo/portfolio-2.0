@@ -8,117 +8,267 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
   <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .scroll-reveal { opacity: 0; transform: translateY(20px); transition: 1s all ease; }
+    .scroll-reveal.active { opacity: 1; transform: translateY(0); }
+    .toolkit-icon { transition: all 0.3s ease; }
+    .toolkit-icon:hover { transform: translateY(-5px); color: #fff; }
+    .timeline-dot::before { content: ''; position: absolute; left: -33px; top: 50%; width: 12px; height: 12px; background: #0284c7; border-radius: 50%; }
+    .timeline-line::before { content: ''; position: absolute; left: -27px; top: 0; width: 1px; height: 100%; background: #cbd5e1; }
+  </style>
 </head>
 <body class="bg-white font-sans text-slate-800">
-  <!-- Navigation -->
   <div id="nav-container"></div>
 
-  <!-- Page Content -->
   <main class="pt-24 sm:pt-32">
-    <!-- Mission Statement -->
-    <section class="max-w-4xl mx-auto px-6 text-center mb-20 md:mb-32">
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight">
-        I build tools that solve real problems.
-      </h1>
-    </section>
-
-    <!-- My Story Section -->
-    <section class="max-w-5xl mx-auto px-6 mb-20 md:mb-32">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
-        <article class="order-2 md:order-1">
-          <header>
-            <h2 class="text-3xl font-bold text-slate-900 mb-4">My Story</h2>
-          </header>
-          <div class="space-y-4 text-lg text-slate-600 leading-relaxed">
-              <p>
-                I'm a Computer Science student at Elon University, but I see myself as more than just a student—I'm a builder. The discipline I learned as a competitive athlete now fuels my passion for software development and cybersecurity.
-              </p>
-              <p>
-                For me, code is a tool for impact. It's about finding an inefficiency or a need within a community and architecting a solution. This led me to found <a href="https://bufferbros.org" target="_blank" class="text-sky-600 font-medium underline hover:text-sky-700">Buffer Bros</a>, and it's the driving force behind the campus events app I'm currently developing.
-              </p>
+    <!-- Hero Section -->
+    <section class="max-w-6xl mx-auto px-6 mb-24 md:mb-32">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6 scroll-reveal">
+          <span class="inline-block px-4 py-2 rounded-full bg-sky-100 text-sky-600 text-sm font-semibold">
+            Software Developer & Student
+          </span>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight">
+            Building tools that <span class="text-sky-600">solve real problems.</span>
+          </h1>
+          <p class="text-xl text-slate-600">
+            Computer Science student at Elon University, entrepreneur, and passionate problem-solver.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="/projects.html" class="inline-flex items-center px-6 py-3 rounded-lg bg-sky-600 text-white font-semibold hover:bg-sky-700 transition-colors">
+              View My Work <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+            <a href="https://github.com/tymastrangelo" target="_blank" class="inline-flex items-center px-6 py-3 rounded-lg bg-slate-200 text-slate-700 font-semibold hover:bg-slate-300 transition-colors">
+              <i class="fab fa-github mr-2"></i> GitHub
+            </a>
           </div>
-        </article>
-        <div class="order-1 md:order-2 flex justify-center">
-          <img src="images/guitar.jpg" alt="Tyler Mastrangelo playing an acoustic guitar" class="w-64 h-64 rounded-lg object-cover object-top shadow-xl transform md:rotate-3 border border-slate-100" />
         </div>
-      </div>
-    </section>
-
-    <!-- Philosophy Section -->
-    <section class="bg-slate-50 py-20 md:py-24 border-y border-slate-200">
-      <div class="max-w-5xl mx-auto px-6">
-        <h2 class="text-3xl font-bold text-slate-900 text-center mb-12">My Philosophy</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-          <div class="text-center md:text-left">
-            <h3 class="text-xl font-semibold text-slate-900 mb-2">Purpose-Driven Development</h3>
-            <p class="text-slate-600">I focus on creating applications that serve a clear purpose, whether it's enhancing campus life or streamlining a business process.</p>
-          </div>
-          <div class="text-center md:text-left">
-            <h3 class="text-xl font-semibold text-slate-900 mb-2">Security by Design</h3>
-            <p class="text-slate-600">My interest in cybersecurity isn't just academic; I believe in building secure, resilient systems from the very first line of code.</p>
-          </div>
-          <div class="text-center md:text-left">
-            <h3 class="text-xl font-semibold text-slate-900 mb-2">Entrepreneurial Mindset</h3>
-            <p class="text-slate-600">I approach every project with a founder's mentality—identifying the problem, understanding the user, and delivering value.</p>
+        <div class="relative scroll-reveal">
+          <img src="images/guitar.jpg" alt="Tyler Mastrangelo playing an acoustic guitar" 
+               class="w-full h-[500px] rounded-2xl object-cover shadow-2xl transform hover:scale-[1.02] transition-transform duration-500" />
+          <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-xl">
+            <p class="text-slate-900 font-semibold">Currently working on:</p>
+            <p class="text-sky-600">Campus Events App 🚀</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- "In The Works" Showcase -->
-    <section class="py-20 md:py-24">
+    <!-- Journey Section -->
+    <section class="bg-slate-50 py-20 md:py-32 border-y border-slate-200">
       <div class="max-w-5xl mx-auto px-6">
-        <div class="text-center mb-12">
-          <span class="text-sm font-bold uppercase tracking-wider text-sky-600">In The Works</span>
-          <h2 class="text-3xl font-bold text-slate-900 mt-2">Building for the Elon Community</h2>
+        <div class="text-center mb-16 scroll-reveal">
+          <span class="text-sm font-bold uppercase tracking-wider text-sky-600">My Journey</span>
+          <h2 class="text-3xl font-bold text-slate-900 mt-2">From Athlete to Developer</h2>
         </div>
-        <div class="bg-white rounded-xl shadow-lg p-8 md:p-10 grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
-          <div class="md:col-span-3">
-            <h3 class="text-2xl font-semibold text-slate-900 mb-3">Campus Events App</h3>
-            <p class="text-lg text-slate-600 leading-relaxed">
-              I'm currently developing a mobile app to centralize event information for clubs at Elon University. The goal is simple: make it easier for students to discover what's happening on campus and get involved. This project combines my skills in mobile development, backend services, and user-centric design to solve a problem I've seen firsthand.
+        
+        <div class="relative pl-8 space-y-12">
+          <div class="timeline-line"></div>
+          
+          <div class="relative timeline-dot scroll-reveal">
+            <h3 class="text-xl font-semibold text-slate-900 mb-2">Early Beginnings</h3>
+            <p class="text-slate-600">
+              Started as a competitive athlete, where I learned the value of discipline, dedication, and continuous improvement.
+              These principles now drive my approach to software development.
             </p>
           </div>
-          <div class="md:col-span-2 flex justify-center items-center">
-            <img src="images/app-mockup.png" alt="Mockup of a campus events mobile app" class="max-w-xs w-full rounded-xl shadow-lg">
+
+          <div class="relative timeline-dot scroll-reveal">
+            <h3 class="text-xl font-semibold text-slate-900 mb-2">Discovering Code</h3>
+            <p class="text-slate-600">
+              Found my passion in Computer Science at Elon University. Realized that coding wasn't just about writing programs—it was about solving real-world problems.
+            </p>
+          </div>
+
+          <div class="relative timeline-dot scroll-reveal">
+            <h3 class="text-xl font-semibold text-slate-900 mb-2">Entrepreneurial Venture</h3>
+            <p class="text-slate-600">
+              Founded <a href="https://bufferbros.org" target="_blank" class="text-sky-600 font-medium hover:text-sky-700 underline">Buffer Bros</a>, 
+              turning my technical skills into a real business solution. This experience taught me the importance of user-focused development.
+            </p>
+          </div>
+
+          <div class="relative timeline-dot scroll-reveal">
+            <h3 class="text-xl font-semibold text-slate-900 mb-2">Current Focus</h3>
+            <p class="text-slate-600">
+              Developing a campus events app to enhance student life at Elon, while pursuing my B.S. in Computer Science with minors in Cybersecurity & Psychology.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Toolkit Section -->
-    <section class="bg-slate-800 text-white pt-16 pb-20 md:pt-20 md:pb-24">
-      <div class="max-w-5xl mx-auto px-6 text-center">
-        <h2 class="text-3xl font-bold mb-12">My Toolkit</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div>
-            <h3 class="text-xl font-semibold mb-4">Technologies & Languages</h3>
-            <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-4 text-4xl text-slate-400">
-              <i class="devicon-python-plain toolkit-icon" title="Python"></i>
-              <i class="devicon-java-plain toolkit-icon" title="Java"></i>
-              <i class="devicon-javascript-plain toolkit-icon" title="JavaScript"></i>
-              <i class="devicon-html5-plain toolkit-icon" title="HTML5"></i>
-              <i class="devicon-css3-plain toolkit-icon" title="CSS3"></i>
-              <i class="devicon-tailwindcss-plain toolkit-icon" title="Tailwind CSS"></i>
-              <i class="devicon-amazonwebservices-original toolkit-icon" title="AWS"></i>
-              <i class="devicon-git-plain toolkit-icon" title="Git"></i>
+    <!-- Philosophy Cards -->
+    <section class="py-20 md:py-32">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-slate-900 text-center mb-16 scroll-reveal">My Philosophy</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="group p-8 rounded-2xl bg-white border border-slate-200 hover:border-sky-200 transition-all duration-300 cursor-default scroll-reveal">
+            <div class="mb-6">
+              <span class="inline-block p-3 rounded-lg bg-sky-100 text-sky-600 group-hover:bg-sky-600 group-hover:text-white transition-colors">
+                <i class="fas fa-bullseye text-2xl"></i>
+              </span>
+            </div>
+            <h3 class="text-xl font-semibold text-slate-900 mb-3">Purpose-Driven Development</h3>
+            <p class="text-slate-600 group-hover:text-slate-700">
+              Every line of code should serve a purpose. I focus on creating applications that solve real problems and add tangible value to users' lives.
+            </p>
+          </div>
+
+          <div class="group p-8 rounded-2xl bg-white border border-slate-200 hover:border-sky-200 transition-all duration-300 cursor-default scroll-reveal">
+            <div class="mb-6">
+              <span class="inline-block p-3 rounded-lg bg-sky-100 text-sky-600 group-hover:bg-sky-600 group-hover:text-white transition-colors">
+                <i class="fas fa-shield-alt text-2xl"></i>
+              </span>
+            </div>
+            <h3 class="text-xl font-semibold text-slate-900 mb-3">Security by Design</h3>
+            <p class="text-slate-600 group-hover:text-slate-700">
+              Security isn't an afterthought—it's a fundamental requirement. I build systems with security and privacy considerations from day one.
+            </p>
+          </div>
+
+          <div class="group p-8 rounded-2xl bg-white border border-slate-200 hover:border-sky-200 transition-all duration-300 cursor-default scroll-reveal">
+            <div class="mb-6">
+              <span class="inline-block p-3 rounded-lg bg-sky-100 text-sky-600 group-hover:bg-sky-600 group-hover:text-white transition-colors">
+                <i class="fas fa-lightbulb text-2xl"></i>
+              </span>
+            </div>
+            <h3 class="text-xl font-semibold text-slate-900 mb-3">Entrepreneurial Mindset</h3>
+            <p class="text-slate-600 group-hover:text-slate-700">
+              I approach each project as an entrepreneur—identifying opportunities, understanding users, and delivering solutions that create impact.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Current Project -->
+    <section class="bg-slate-900 py-20 md:py-32 overflow-hidden">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="text-white space-y-6 scroll-reveal">
+            <span class="text-sm font-bold uppercase tracking-wider text-sky-400">Currently Building</span>
+            <h2 class="text-3xl font-bold">Campus Events App</h2>
+            <p class="text-lg text-slate-300 leading-relaxed">
+              A mobile application that revolutionizes how Elon University students discover and engage with campus events. 
+              Built with React Native and AWS, it provides a centralized platform for clubs to share events and students to stay connected.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-center text-slate-300">
+                <i class="fas fa-check text-sky-400 mr-3"></i>
+                Real-time event updates and notifications
+              </li>
+              <li class="flex items-center text-slate-300">
+                <i class="fas fa-check text-sky-400 mr-3"></i>
+                Personalized event recommendations
+              </li>
+              <li class="flex items-center text-slate-300">
+                <i class="fas fa-check text-sky-400 mr-3"></i>
+                Seamless club-student interaction
+              </li>
+            </ul>
+            <a href="/projects.html" class="inline-flex items-center px-6 py-3 rounded-lg bg-sky-600 text-white font-semibold hover:bg-sky-700 transition-colors">
+              Learn More <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+          <div class="relative scroll-reveal">
+            <div class="relative">
+              <img src="images/eventsapp.png" alt="Campus Events App mockup" 
+                   class="w-full rounded-xl shadow-2xl transform hover:scale-105 transition-transform duration-500" />
+              <div class="absolute -bottom-4 -right-4 bg-sky-600 text-white px-6 py-3 rounded-lg shadow-lg">
+                <p class="font-semibold">Launch Expected</p>
+                <p class="text-sky-200">Winter 2025</p>
+              </div>
             </div>
           </div>
-          <div>
-            <h3 class="text-xl font-semibold mb-4">Education</h3>
-            <p class="text-slate-300">B.S. in Computer Science</p>
-            <p class="text-slate-400">Minors in Cybersecurity & Psychology</p>
-            <p class="font-semibold text-slate-200 mt-1">Elon University</p>
-          </div>
         </div>
       </div>
     </section>
 
+    <!-- Skills Section -->
+    <section class="py-20 md:py-32">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16 scroll-reveal">
+          <span class="text-sm font-bold uppercase tracking-wider text-sky-600">My Toolkit</span>
+          <h2 class="text-3xl font-bold text-slate-900 mt-2">Technologies I Work With</h2>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+          <div class="flex flex-col items-center space-y-3 scroll-reveal">
+            <i class="devicon-python-plain text-6xl text-slate-700 toolkit-icon"></i>
+            <span class="font-medium text-slate-600">Python</span>
+          </div>
+          <div class="flex flex-col items-center space-y-3 scroll-reveal">
+            <i class="devicon-java-plain text-6xl text-slate-700 toolkit-icon"></i>
+            <span class="font-medium text-slate-600">Java</span>
+          </div>
+          <div class="flex flex-col items-center space-y-3 scroll-reveal">
+            <i class="devicon-javascript-plain text-6xl text-slate-700 toolkit-icon"></i>
+            <span class="font-medium text-slate-600">JavaScript</span>
+          </div>
+          <div class="flex flex-col items-center space-y-3 scroll-reveal">
+            <i class="devicon-react-original text-6xl text-slate-700 toolkit-icon"></i>
+            <span class="font-medium text-slate-600">React</span>
+          </div>
+          <div class="flex flex-col items-center space-y-3 scroll-reveal">
+            <i class="devicon-tailwindcss-plain text-6xl text-slate-700 toolkit-icon"></i>
+            <span class="font-medium text-slate-600">Tailwind</span>
+          </div>
+          <div class="flex flex-col items-center space-y-3 scroll-reveal">
+            <i class="devicon-amazonwebservices-original text-6xl text-slate-700 toolkit-icon"></i>
+            <span class="font-medium text-slate-600">AWS</span>
+          </div>
+          <div class="flex flex-col items-center space-y-3 scroll-reveal">
+            <i class="devicon-git-plain text-6xl text-slate-700 toolkit-icon"></i>
+            <span class="font-medium text-slate-600">Git</span>
+          </div>
+          <div class="flex flex-col items-center space-y-3 scroll-reveal">
+            <i class="devicon-nodejs-plain text-6xl text-slate-700 toolkit-icon"></i>
+            <span class="font-medium text-slate-600">Node.js</span>
+          </div>
+        </div>
+
+        <div class="text-center bg-slate-50 rounded-2xl p-8 scroll-reveal">
+          <h3 class="text-xl font-semibold text-slate-900 mb-3">Education</h3>
+          <p class="text-2xl font-bold text-sky-600 mb-1">Elon University</p>
+          <p class="text-lg text-slate-600">B.S. in Computer Science</p>
+          <p class="text-slate-500">Minors in Cybersecurity & Psychology</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="bg-slate-900 py-20">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-white mb-6 scroll-reveal">Let's Build Something Together</h2>
+        <p class="text-lg text-slate-300 mb-8 scroll-reveal">
+          Whether you have a project in mind or just want to connect, I'm always open to discussing new opportunities.
+        </p>
+        <a href="/contact.html" class="inline-flex items-center px-8 py-4 rounded-lg bg-sky-600 text-white font-semibold hover:bg-sky-700 transition-colors scroll-reveal">
+          Get in Touch <i class="fas fa-paper-plane ml-2"></i>
+        </a>
+      </div>
+    </section>
   </main>
 
-  <!-- Footer -->
   <div id="footer-container"></div>
 
   <script src="js/main.js" defer></script>
+  <script>
+    // Scroll reveal animation
+    function reveal() {
+      const reveals = document.querySelectorAll('.scroll-reveal');
+      reveals.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (elementTop < windowHeight - 100) {
+          element.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', reveal);
+    window.addEventListener('load', reveal);
+  </script>
 </body>
 </html>

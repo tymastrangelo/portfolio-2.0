@@ -6,45 +6,91 @@
   <title>Tyler Mastrangelo | Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
   <link rel="stylesheet" href="css/styles.css" />
-</head>
-<body class="bg-slate-50 font-sans text-slate-800">
+  <style>
+    .scroll-reveal { opacity: 0; transform: translateY(20px); transition: 1s all ease; }
+    .scroll-reveal.active { opacity: 1; transform: translateY(0); }
+    .floating { animation: float 3s ease-in-out infinite; }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+    .project-card { transition: all 0.3s ease; }
+    .project-card:hover { transform: translateY(-5px); }
+    .gradient-text {
+      background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+<body class="bg-white font-sans text-slate-800">
 
   <!-- Navigation -->
   <div id="nav-container"></div>
 
   <!-- Hero Section -->
   <main class="pt-24 sm:pt-32 pb-16">
-    <section class="max-w-6xl mx-auto px-4 sm:px-6 md:px-8">
-      <div class="grid md:grid-cols-5 gap-12 items-center">
+    <section class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <!-- Text Content -->
-        <div class="md:col-span-3 text-center md:text-left">
+        <div class="space-y-8 scroll-reveal">
+          <div class="inline-flex items-center space-x-2 px-4 py-2 bg-slate-900 bg-opacity-5 rounded-full">
+            <span class="relative flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+            </span>
+            <span class="text-sm font-semibold text-slate-800">Available for Projects</span>
+          </div>
+          
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900">
-            <span class="block">Tyler Mastrangelo</span>
-            <span class="typewriter-container block text-2xl sm:text-3xl text-slate-800 font-medium mt-2">
-              <span class="typewriter">Student, Developer, Athlete</span>
+            <span class="block">Hello, I'm Tyler</span>
+            <span class="block mt-4 gradient-text">
+              <span class="typewriter">Student, Developer, Entrepreneur</span>
             </span>
           </h1>
-          <p class="mt-6 max-w-2xl mx-auto md:mx-0 text-lg sm:text-xl text-slate-600">
-            Computer Science student at Elon University with a passion for cybersecurity, software development, and entrepreneurship.
+
+          <p class="text-lg sm:text-xl text-slate-600 max-w-2xl">
+            A Computer Science student at Elon University, building tools that solve real problems. Currently focused on campus tech innovation and cybersecurity solutions.
           </p>
-          <div class="mt-8 flex flex-wrap justify-center md:justify-start gap-4">
+
+          <div class="flex flex-wrap gap-4">
+            <a href="/projects.html" 
+              class="group inline-flex items-center px-6 py-3 bg-slate-900 text-white font-semibold rounded-xl shadow-lg hover:bg-slate-800 transition-all duration-300 hover:shadow-2xl">
+              View My Work
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
             <a href="contact.html"
-              class="inline-flex items-center justify-center px-6 py-3 bg-sky-600 text-white font-semibold rounded-lg shadow-md hover:bg-sky-700 transition-colors duration-200">
-              Get In Touch
+              class="inline-flex items-center px-6 py-3 bg-sky-600 text-white font-semibold rounded-xl shadow-lg hover:bg-sky-700 transition-all duration-300 hover:shadow-2xl">
+              Get In Touch <i class="fas fa-paper-plane ml-2"></i>
             </a>
             <a href="files/master resume.pdf" target="_blank"
-              class="inline-flex items-center justify-center px-6 py-3 border border-slate-300 text-slate-700 font-semibold rounded-lg hover:bg-slate-100 hover:border-slate-400 transition-colors duration-200">
-              View Resume <i class="fas fa-arrow-right ml-2 text-sm"></i>
+              class="inline-flex items-center px-6 py-3 bg-white text-slate-700 font-semibold rounded-xl shadow-lg hover:bg-slate-50 border border-slate-200 transition-all duration-300">
+              View Resume <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+
+          <div class="flex items-center space-x-4 text-slate-600">
+            <a href="https://github.com/tymastrangelo" target="_blank" class="hover:text-slate-900 transition-colors">
+              <i class="fab fa-github text-2xl"></i>
+            </a>
+            <a href="https://linkedin.com/in/tymastrangelo" target="_blank" class="hover:text-slate-900 transition-colors">
+              <i class="fab fa-linkedin text-2xl"></i>
             </a>
           </div>
         </div>
+
         <!-- Image -->
-        <div class="md:col-span-2 flex justify-center md:justify-end">
-          <div class="relative w-64 h-64 sm:w-80 sm:h-80">
-            <div class="absolute inset-0 bg-gradient-to-br from-slate-800 to-sky-700 rounded-full transform -rotate-12"></div>
-            <img src="images/pfp.jpeg" alt="Tyler Mastrangelo"
-              class="relative w-full h-full rounded-full object-cover object-top shadow-xl border-4 border-white" />
+        <div class="relative scroll-reveal">
+          <div class="absolute inset-0 bg-gradient-to-br from-sky-600/20 to-slate-600/20 rounded-3xl transform rotate-6"></div>
+          <img src="images/full-shot.jpg" alt="Tyler Mastrangelo"
+            class="relative w-full h-[600px] rounded-3xl object-cover shadow-2xl hover:shadow-3xl transition-shadow duration-300" />
+          <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-xl">
+            <p class="text-slate-900 font-semibold">Currently building:</p>
+            <p class="text-sky-600">Campus Events App 🚀</p>
           </div>
         </div>
       </div>
@@ -61,100 +107,191 @@
     </section>
 
     <!-- Featured Projects -->
-    <section class="bg-white py-20 sm:py-24 border-t border-b border-slate-200">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 md:px-8">
-        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 text-center mb-12">Featured Projects</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-          <!-- Project: Campus Events App -->
-          <div class="bg-slate-50 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col">
-            <div class="p-6 flex-grow flex flex-col">
-              <div class="flex items-center mb-3">
-                <i class="fas fa-mobile-alt text-xl text-sky-600 mr-3"></i>
-                <h3 class="text-xl font-semibold text-slate-900">Campus Events App</h3>
-              </div>
-              <p class="text-slate-600 mb-4 flex-grow">
-                A mobile app for Elon University clubs to post events and for students to get involved. Currently in development.
-              </p>
-              <div class="mt-auto pt-4 border-t border-slate-200 flex justify-between items-center">
-                <span class="text-sm bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full font-medium">In Progress</span>
-                <a href="projects.html" class="font-semibold text-sky-600 hover:underline">Learn More <i class="fas fa-arrow-right text-xs ml-1"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 1: Connect 4 -->
-          <div class="bg-slate-50 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col">
-            <div class="p-6 flex-grow flex flex-col">
-              <div class="flex items-center mb-3">
-                <i class="fas fa-gamepad text-xl text-sky-600 mr-3"></i>
-                <h3 class="text-xl font-semibold text-slate-900">Connect 4 Game</h3>
-              </div>
-              <p class="text-slate-600 mb-4 flex-grow">
-                A classic 2-player Connect 4 game built with vanilla JavaScript, fully responsive and playable in the browser.
-              </p>
-              <div class="mt-auto pt-4 border-t border-slate-200 flex justify-between items-center">
-                <span class="text-sm bg-slate-200 text-slate-800 px-3 py-1 rounded-full font-medium">JavaScript</span>
-                <a href="projects/connect4/index.html" class="font-semibold text-sky-600 hover:underline">Play Game <i class="fas fa-arrow-right text-xs ml-1"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 2: AWS Notes App -->
-          <div class="bg-slate-50 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col">
-            <div class="p-6 flex-grow flex flex-col">
-              <div class="flex items-center mb-3">
-                <i class="fab fa-aws text-xl text-sky-600 mr-3"></i>
-                <h3 class="text-xl font-semibold text-slate-900">Secure Notes App</h3>
-              </div>
-              <p class="text-slate-600 mb-4 flex-grow">
-                An authentication-based notes application leveraging AWS S3 and IAM for secure, user-specific data storage and access control.
-              </p>
-              <div class="mt-auto pt-4 border-t border-slate-200 flex justify-between items-center">
-                <span class="text-sm bg-slate-200 text-slate-800 px-3 py-1 rounded-full font-medium">AWS</span>
-                <a href="projects.html" class="font-semibold text-sky-600 hover:underline">Learn More <i class="fas fa-arrow-right text-xs ml-1"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 3: Iron Man Helmet -->
-          <div class="bg-slate-50 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col">
-            <div class="p-6 flex-grow flex flex-col">
-              <div class="flex items-center mb-3">
-                <i class="fas fa-robot text-xl text-sky-600 mr-3"></i>
-                <h3 class="text-xl font-semibold text-slate-900">IoT Iron Man Helmet</h3>
-              </div>
-              <p class="text-slate-600 mb-4 flex-grow">
-                A 3D-printed, Arduino-powered prototype with servo motors and LED integration. A fun blend of hardware design and embedded systems.
-              </p>
-              <div class="mt-auto pt-4 border-t border-slate-200 flex justify-between items-center">
-                <span class="text-sm bg-slate-200 text-slate-800 px-3 py-1 rounded-full font-medium">Arduino</span>
-                <a href="projects.html" class="font-semibold text-sky-600 hover:underline">Learn More <i class="fas fa-arrow-right text-xs ml-1"></i></a>
-              </div>
-            </div>
-          </div>
-
+    <section class="bg-slate-50/50 py-20 sm:py-32 border-y border-slate-200">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16 scroll-reveal">
+          <span class="text-sm font-bold uppercase tracking-wider text-sky-600">Featured Work</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-2">Recent Projects</h2>
         </div>
-        <div class="text-center mt-12">
-          <a href="projects.html"
-            class="inline-flex items-center px-6 py-3 border border-slate-300 text-slate-700 font-semibold rounded-lg hover:bg-slate-100 transition-colors duration-200">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project: Campus Events App -->
+          <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col overflow-hidden project-card scroll-reveal">
+            <div class="relative h-48 bg-slate-100">
+              <img src="images/eventsapp.png" alt="Campus Events App Preview" class="w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/75 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                <div class="p-6 text-white">
+                  <p class="font-medium">A centralized platform for campus events</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-6 flex-grow flex flex-col">
+              <div class="flex items-center justify-between mb-4">
+                <h3 class="text-xl font-bold text-slate-900">Campus Events App</h3>
+                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-yellow-100 text-yellow-800">In Progress</span>
+              </div>
+              <p class="text-slate-600 mb-6 flex-grow">
+                Mobile app revolutionizing how Elon University students discover and engage with campus events.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-2 py-1 rounded-md text-xs font-medium bg-slate-100 text-slate-600">React Native</span>
+                <span class="px-2 py-1 rounded-md text-xs font-medium bg-slate-100 text-slate-600">AWS</span>
+                <span class="px-2 py-1 rounded-md text-xs font-medium bg-slate-100 text-slate-600">Node.js</span>
+              </div>
+              <a href="projects.html" class="inline-flex items-center justify-between w-full px-4 py-2 bg-slate-100 rounded-lg text-slate-600 hover:bg-slate-200 transition-colors">
+                <span class="font-medium">View Project</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project: Iron Man Helmet -->
+          <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col overflow-hidden project-card scroll-reveal">
+            <div class="relative h-48 bg-slate-100">
+              <img src="images/helmet1.jpg" alt="IoT Iron Man Helmet Preview" class="w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/75 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                <div class="p-6 text-white">
+                  <p class="font-medium">Arduino & Servo powered</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-6 flex-grow flex flex-col">
+              <div class="flex items-center justify-between mb-4">
+                <h3 class="text-xl font-bold text-slate-900">IoT Iron Man Helmet</h3>
+                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-sky-100 text-sky-800">Hardware</span>
+              </div>
+              <p class="text-slate-600 mb-6 flex-grow">
+                Arduino-powered helmet with servo motors, LEDs, and 3D-printed components.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-2 py-1 rounded-md text-xs font-medium bg-slate-100 text-slate-600">Arduino</span>
+                <span class="px-2 py-1 rounded-md text-xs font-medium bg-slate-100 text-slate-600">C++</span>
+                <span class="px-2 py-1 rounded-md text-xs font-medium bg-slate-100 text-slate-600">3D Printing</span>
+              </div>
+              <a href="projects.html" class="inline-flex items-center justify-between w-full px-4 py-2 bg-slate-100 rounded-lg text-slate-600 hover:bg-slate-200 transition-colors">
+                <span class="font-medium">View Details</span>
+                <i class="fas fa-robot"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project: Connect 4 -->
+          <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col overflow-hidden project-card scroll-reveal">
+            <div class="relative h-48 bg-slate-100">
+              <img src="images/connect4_1.png" alt="Connect 4 Game Preview" class="w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/75 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                <div class="p-6 text-white">
+                  <p class="font-medium">Interactive browser-based game</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-6 flex-grow flex flex-col">
+              <div class="flex items-center justify-between mb-4">
+                <h3 class="text-xl font-bold text-slate-900">Connect 4 Game</h3>
+                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-800">Live</span>
+              </div>
+              <p class="text-slate-600 mb-6 flex-grow">
+                A responsive, animated Connect 4 game with AI opponent and touch support.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-2 py-1 rounded-md text-xs font-medium bg-slate-100 text-slate-600">JavaScript</span>
+                <span class="px-2 py-1 rounded-md text-xs font-medium bg-slate-100 text-slate-600">HTML/CSS</span>
+                <span class="px-2 py-1 rounded-md text-xs font-medium bg-slate-100 text-slate-600">AI</span>
+              </div>
+              <a href="projects/connect4/index.html" class="inline-flex items-center justify-between w-full px-4 py-2 bg-slate-100 rounded-lg text-slate-600 hover:bg-slate-200 transition-colors">
+                <span class="font-medium">Play Game</span>
+                <i class="fas fa-gamepad"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+
+        <div class="text-center mt-16">
+          <a href="projects.html" class="inline-flex items-center px-8 py-4 bg-white text-slate-900 font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group">
             View All Projects
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
           </a>
         </div>
       </div>
     </section>
 
+    <!-- Skills Section -->
+    <section class="py-20 sm:py-32">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16 scroll-reveal">
+          <span class="text-sm font-bold uppercase tracking-wider text-sky-600">Technologies</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-2">My Tech Stack</h2>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 md:gap-12 mb-16">
+          <div class="flex flex-col items-center space-y-4 group scroll-reveal">
+            <div class="p-4 rounded-xl bg-slate-100 group-hover:bg-slate-200 transition-colors">
+              <i class="devicon-python-plain text-5xl text-slate-700"></i>
+            </div>
+            <span class="font-medium text-slate-900">Python</span>
+          </div>
+          <div class="flex flex-col items-center space-y-4 group scroll-reveal">
+            <div class="p-4 rounded-xl bg-slate-100 group-hover:bg-slate-200 transition-colors">
+              <i class="devicon-java-plain text-5xl text-slate-700"></i>
+            </div>
+            <span class="font-medium text-slate-900">Java</span>
+          </div>
+          <div class="flex flex-col items-center space-y-4 group scroll-reveal">
+            <div class="p-4 rounded-xl bg-slate-100 group-hover:bg-slate-200 transition-colors">
+              <i class="devicon-javascript-plain text-5xl text-slate-700"></i>
+            </div>
+            <span class="font-medium text-slate-900">JavaScript</span>
+          </div>
+          <div class="flex flex-col items-center space-y-4 group scroll-reveal">
+            <div class="p-4 rounded-xl bg-slate-100 group-hover:bg-slate-200 transition-colors">
+              <i class="devicon-react-original text-5xl text-slate-700"></i>
+            </div>
+            <span class="font-medium text-slate-900">React</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 scroll-reveal">
+          <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-6 text-white">
+            <i class="fas fa-code text-2xl mb-4"></i>
+            <h3 class="text-xl font-bold mb-2">Frontend Development</h3>
+            <p class="text-slate-300">Building responsive, accessible, and intuitive user interfaces</p>
+          </div>
+          <div class="bg-gradient-to-br from-sky-600 to-sky-700 rounded-2xl p-6 text-white">
+            <i class="fas fa-server text-2xl mb-4"></i>
+            <h3 class="text-xl font-bold mb-2">Backend Systems</h3>
+            <p class="text-sky-100">Designing secure and scalable server-side applications</p>
+          </div>
+          <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-6 text-white">
+            <i class="fas fa-shield-alt text-2xl mb-4"></i>
+            <h3 class="text-xl font-bold mb-2">Cybersecurity</h3>
+            <p class="text-slate-300">Implementing robust security measures and best practices</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- CTA -->
-    <section class="py-20 sm:py-24">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 text-center">
-        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Let's Build Something</h2>
-        <p class="text-lg text-slate-600 mb-8">
-          Have a project in mind, a question about my work, or just want to connect? I'd love to hear from you.
+    <section class="relative py-20 sm:py-32 bg-slate-900 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-sky-600/20 to-slate-900/20"></div>
+      <div class="relative max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6 scroll-reveal">Let's Build Something Together</h2>
+        <p class="text-lg text-slate-300 mb-8 scroll-reveal">
+          Whether you have a project in mind or just want to connect, I'm always excited to collaborate on innovative solutions.
         </p>
-        <a href="contact.html"
-          class="inline-flex items-center justify-center px-8 py-4 bg-slate-900 text-white font-semibold rounded-lg shadow-md hover:bg-slate-800 transition-colors duration-200">
-          Send a Message
-        </a>
+        <div class="flex flex-wrap justify-center gap-4 scroll-reveal">
+          <a href="contact.html"
+            class="inline-flex items-center px-8 py-4 bg-white text-slate-900 font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group">
+            Start a Conversation
+            <i class="fas fa-paper-plane ml-2 group-hover:translate-x-1 transition-transform"></i>
+          </a>
+          <a href="/projects.html"
+            class="inline-flex items-center px-8 py-4 bg-sky-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-sky-700">
+            View My Work <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
       </div>
     </section>
   </main>
@@ -163,5 +300,21 @@
   <div id="footer-container"></div>
 
   <script src="js/main.js" defer></script>
+  <script>
+    // Scroll reveal animation
+    function reveal() {
+      const reveals = document.querySelectorAll('.scroll-reveal');
+      reveals.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (elementTop < windowHeight - 100) {
+          element.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', reveal);
+    window.addEventListener('load', reveal);
+  </script>
 </body>
 </html>

@@ -178,7 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
     title.classList.add("text-sky-600");
 
     preview.src = image;
-    desc.textContent = description;
+    desc.innerHTML = description.replace('Buffer Bros', '<a href="https://bufferbros.org" target="_blank" class="font-semibold text-sky-600 underline hover:text-sky-700">Buffer Bros</a>');
     link.href = url || "#";
 
     // Set appropriate action text based on project type
