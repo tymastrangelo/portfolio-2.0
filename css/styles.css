@@ -8,6 +8,35 @@
   }
 }
 
+/* === Mobile Menu Styles === */
+.mobile-menu-open {
+  overflow: hidden;
+}
+
+.mobile-menu-open #mobile-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu-open .hamburger-icon span:first-child {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.mobile-menu-open .hamburger-icon span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-open .hamburger-icon span:last-child {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* === Navigation Styles === */
+.nav-scrolled {
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
 body {
   animation: fadeIn 0.2s ease-in-out;
 }

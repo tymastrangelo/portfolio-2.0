@@ -34,15 +34,23 @@ function initSiteFeatures() {
 // Toggle mobile hamburger menu
 function setupMobileMenu() {
   const toggleBtn = document.getElementById('mobile-menu-button');
-  const hamburgerIcon = document.querySelector('.hamburger-icon');
   const menu = document.getElementById('mobile-menu');
+  const body = document.body;
 
   if (toggleBtn && menu) {
     toggleBtn.addEventListener('click', () => {
       const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
       toggleBtn.setAttribute('aria-expanded', !isExpanded);
-      hamburgerIcon.classList.toggle('open');
-      menu.classList.toggle('-translate-y-full');
+      body.classList.toggle('mobile-menu-open');
+    });
+
+    // Close mobile menu when clicking a link
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        body.classList.remove('mobile-menu-open');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+      });
     });
   }
 }
