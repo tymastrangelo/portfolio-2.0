@@ -1,64 +1,112 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
+:root{
+    --board-blue:#0b62d9;
+    --board-border:#073a8a;
+    --tile-border:rgba(7,58,138,0.95);
+    --red:#e63946;
+    --yellow:#f4c542;
+    --bg:#f8fafc;
 }
 
-#board {
-  background-color: blue;
-  border: 10px solid navy;
-
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-
-  width: 90vw;
-  max-width: 630px;
-  aspect-ratio: 7 / 6;
-
-  margin: 0 auto;
-  box-sizing: border-box;
+html,body{
+    height:100%;
+    margin:0;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background:var(--bg);
+    color: #0f172a;
 }
 
-.tile {
-  flex: 0 0 calc((100% / 7) - 10px); /* 7 columns, minus margin */
-  margin: 5px;
-  aspect-ratio: 1 / 1;
+.board{
+    background:linear-gradient(180deg,var(--board-blue),#0a4bb8);
+    border:6px solid var(--board-border);
+    border-radius:12px;
+    padding:12px;
+    box-shadow: 0 10px 30px rgba(2,6,23,0.2);
 
-  background-color: white;
-  border-radius: 50%;
-  border: 5px solid navy;
-  box-sizing: border-box;
+    display:grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap:10px;
+
+    /* aspect ratio ~ 7:6 -> keep board responsive */
+    width:100%;
+    aspect-ratio: 7 / 6;
+    box-sizing:border-box;
 }
 
-.red-piece {
-    background-color: red;
+.cell{
+    position:relative;
+    background:transparent;
+    border-radius:9999px;
+    overflow:visible;
 }
 
-.yellow-piece {
-    background-color: yellow;
+.slot{
+    width:100%;
+    aspect-ratio:1/1;
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.85), rgba(255,255,255,0.6) 20%, rgba(255,255,255,0.1) 25%), #ffffff;
+    border-radius:50%;
+    border:6px solid var(--tile-border);
+    box-sizing:border-box;
+    transition: transform 160ms cubic-bezier(.2,.9,.2,1), box-shadow 160ms;
+    transform: translateY(0);
 }
 
-.play-again-btn {
-    display: block;
-    margin: 20px auto;
-    padding: 12px 24px;
-    font-size: 18px;
-    font-weight: bold;
-    color: white;
-    background: linear-gradient(to right, #ff416c, #ff4b2b);
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.slot.preview{
+    box-shadow: 0 0 0 6px rgba(255,255,255,0.06) inset;
 }
 
-.play-again-btn:hover {
-    background: linear-gradient(to right, #ff4b2b, #ff416c);
-    transform: scale(1.05);
+.piece{
+    position:absolute;
+    inset:10%;
+    border-radius:50%;
+    transform: translateY(-140%);
+    transition: transform 260ms cubic-bezier(.2,.9,.2,1), box-shadow 200ms;
+    box-shadow: 0 6px 18px rgba(2,6,23,0.25);
 }
 
-.play-again-btn:active {
-    transform: scale(0.95);
+.piece.drop{
+    transform: translateY(0);
 }
+
+.red{ background: linear-gradient(180deg,var(--red), #c0262e);} 
+.yellow{ background: linear-gradient(180deg,var(--yellow), #d8a71b);} 
+
+.highlight{ box-shadow: 0 0 0 6px rgba(255,255,255,0.06) inset, 0 0 24px rgba(255,255,0,0.12);} 
+
+.play-again-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:10px 16px;
+    border-radius:10px;
+    border:none;
+    cursor:pointer;
+    font-weight:600;
+    background:linear-gradient(90deg,#06b6d4,#0ea5e9);
+    color:white;
+    box-shadow: 0 6px 18px rgba(2,6,23,0.12);
+}
+
+.play-again-btn.bg-slate-700{ background: linear-gradient(90deg,#334155,#0f172a); }
+
+#current-piece{ width:18px; height:18px; border:2px solid rgba(15,23,42,0.6); }
+
+/* responsive sizes */
+@media (max-width:640px){
+    .board{ gap:8px; padding:10px; }
+    .slot{ border:5px solid var(--tile-border); }
+    .piece{ inset:12%; }
+}
+
+@media (min-width:1200px){
+    .board{ max-width:900px; }
+}
+
+.sr-only{ position:absolute !important; height:1px; width:1px; overflow:hidden; clip:rect(1px,1px,1px,1px); white-space:nowrap; }
+
+/* compact AI settings */
+#ai-settings{ transition:opacity 180ms ease, transform 200ms ease; }
+#ai-settings.show{ display:flex !important; opacity:1; transform:translateY(0); }
+#ai-settings.hide{ opacity:0; transform:translateY(-6px); }
+
+input[type="checkbox"]{ width:16px; height:16px; accent-color: #0ea5e9; }
+
